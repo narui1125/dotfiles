@@ -54,10 +54,19 @@ initalize(){
 
 	cd ${DOTPATH}
 
+	# backup & make links
 	for f in .??*
 	do
 		[[ "$f" == ".git" ]] && continue
 		[[ "$f" == ".DS_Store" ]] && continue
+
+		BACKUP_PATH="${HOME}/.dotbackup/`date "+%Y-%m-%d_%H:%M:%S"`"
+		if [ -e "${HOME}/$f" ]; then
+			if [ ! -e "${BACKUP_PATH}" ]; then
+					mkdir -p ${BACKUP_PATH}
+			fi
+			mv ${HOME}/$f ${BACKUP_PATH}/$f
+		fi
 
 		ln -snf "${DOTPATH}/$f" "${HOME}/$f"
 		if [ $? -eq 0 ]; then
