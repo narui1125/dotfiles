@@ -20,8 +20,10 @@ deploy(){
 
 	# TSUBAME
 	if [ "$1" == "TSUBAME" ]; then
+		# ライブラリ
 		sh ${BIN_DIR}/install-libevent.sh "$1"
 		sh ${BIN_DIR}/install-ncurses.sh "$1"
+
 		sh ${BIN_DIR}/install-zsh.sh "$1"
 		sh ${BIN_DIR}/install-tmux.sh "$1"
 		sh ${BIN_DIR}/install-powerline-status.sh "$1"

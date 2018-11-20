@@ -19,6 +19,14 @@ export MODULEPATH=/gs/hs0/tga-ishidalab/share/modulefiles:$MODULEPATH
 # aliase
 alias get_node="qrsh -l f_node=1 -l h_rt=0:10:00"
 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # PowerLine Shell
 powerline-daemon -q
 . ~/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
