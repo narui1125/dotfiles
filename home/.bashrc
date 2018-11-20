@@ -10,6 +10,9 @@ fi
 
 # User specific aliases and function
 
+# locale
+export LC_ALL=ja_JP.UTF-8
+
 # path
 export PATH="$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
