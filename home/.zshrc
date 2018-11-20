@@ -26,7 +26,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# PowerLine Shell
+# PowerLine
 export POWERLINE_ROOT="${HOME}/.pyenv/versions/3.7.0/lib/python3.7/site-packages/powerline"
 powerline-daemon -q
 . ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
