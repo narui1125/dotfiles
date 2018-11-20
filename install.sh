@@ -6,6 +6,8 @@ SCRIPT_DIR=$(cd $(dirname $0);pwd)
 download(){
 	local GIT_URL="https://github.com/narui1125/dotfiles"
 
+	printf "\e[1;34m=== Download Repository ===\e[0m \n"
+
 	if has "git"; then
 		git clone --recursive "${GIT_URL}"
 
@@ -16,12 +18,12 @@ download(){
 
 ## install
 deploy(){
-	BIN_DIR="${SCRIPT_DIR}/bin"
+	local BIN_DIR="${SCRIPT_DIR}/bin"
 
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
-	# TSUBAME
-	if [ "$1" == "TSUBAME" ]; then
+	# Install from source
+	if [ "$1" == "no-root" ]; then
 		# ライブラリ
 		sh ${BIN_DIR}/install-libevent.sh "$1"
 		sh ${BIN_DIR}/install-ncurses.sh "$1"
@@ -31,16 +33,12 @@ deploy(){
 		sh ${BIN_DIR}/install-tmux.sh "$1"
 		sh ${BIN_DIR}/install-powerline-status.sh "$1"
 
-		source ~/.bashrc
-
-	# Local
-	elif [ "$1" == "Local" ]; then
+	# Install with Homebrew
+	elif [ "$1" == "homebrew" ]; then
 		sh ${BIN_DIR}/install-zsh.sh "$1"
 		sh ${BIN_DIR}/install-pyenv.sh "$1"
 		sh ${BIN_DIR}/install-tmux.sh "$1"
 		sh ${BIN_DIR}/install-powerline-status.sh "$1"
-
-		source ~/.bashrc
 
 	# Error
 	else
@@ -50,7 +48,7 @@ deploy(){
 
 ## configure
 initalize(){
-	DOTPATH="${SCRIPT_DIR}/home"
+	local DOTPATH="${SCRIPT_DIR}/home"
 
 	printf "\e[1;34m=== Created dotfile symbolic links ===\e[0m \n"
 
@@ -66,8 +64,12 @@ initalize(){
 			printf "%-25s -> %s\n" "${DOTPATH}/$f" "${HOME}/$f"
 		fi
 	done
+
+	cd
+
+	source ~/.bashrc
 }
 
-deploy "Local"
+deploy "homebrew"
 
 initalize
