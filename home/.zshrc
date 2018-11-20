@@ -19,8 +19,8 @@ if [ "${MACHINE_TYPE}" = "TSUBAME" ]; then
 fi
 
 # Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:${PATH}"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
@@ -28,6 +28,7 @@ fi
 
 # PowerLine
 export POWERLINE_ROOT="${HOME}/.pyenv/versions/3.7.0/lib/python3.7/site-packages/powerline"
+export PYTHONPATH="${HOME}/.pyenv/versions/3.7.0/lib/python3.7/site-packages:${PYTHONPATH}"
 powerline-daemon -q
 . ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
 
