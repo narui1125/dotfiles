@@ -20,39 +20,17 @@ deploy(){
 
 	# TSUBAME
 	if [ "$1" == "TSUBAME" ]; then
-		sh ${BIN_DIR}/install-libevent.sh
-		sh ${BIN_DIR}/install-ncurses.sh
-		sh ${BIN_DIR}/install-zsh.sh
-		sh ${BIN_DIR}/install-tmux.sh
-		sh ${BIN_DIR}/install-powerline-status.sh
+		sh ${BIN_DIR}/install-libevent.sh "$1"
+		sh ${BIN_DIR}/install-ncurses.sh "$1"
+		sh ${BIN_DIR}/install-zsh.sh "$1"
+		sh ${BIN_DIR}/install-tmux.sh "$1"
+		sh ${BIN_DIR}/install-powerline-status.sh "$1"
 
 	# Local
 	elif [ "$1" == "Local" ]; then
-		if type "brew" > /dev/null 2>&1 ; then
-			echo "Already installed Homebrew ✔︎"
-		else
-			echo "Install homebrew"
-			/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-		fi
-
-		if type "zsh" > /dev/null 2>&1 ; then
-		  echo "Already installed zsh ✔︎"
-		else
-			echo "install zsh"
-			brew install zsh
-		fi
-
-		if type "tmux" > /dev/null 2>&1 ; then
-		  echo "Already installed tmux ✔︎"
-		else
-			echo "install tmux"
-			brew install tmux
-		fi
-		
-		echo "Cleanup Homebrew"
-		brew cleanup
-
-		sh ${BIN_DIR}/install-powerline-status.sh
+		sh ${BIN_DIR}/install-zsh.sh "$1"
+		sh ${BIN_DIR}/install-tmux.sh "$1"
+		sh ${BIN_DIR}/install-powerline-status.sh "$1"
 
 	# Error
 	else
@@ -80,5 +58,6 @@ initalize(){
 	done
 }
 
-initalize
 deploy "Local"
+
+initalize
