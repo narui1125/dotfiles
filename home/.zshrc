@@ -20,7 +20,6 @@ export MODULEPATH=/gs/hs0/tga-ishidalab/share/modulefiles:$MODULEPATH
 alias get_node="qrsh -l f_node=1 -l h_rt=0:10:00"
 
 # PowerLine Shell
-export XDG_CONFIG_HOME="$HOME/.config"
 powerline-daemon -q
 . ~/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 

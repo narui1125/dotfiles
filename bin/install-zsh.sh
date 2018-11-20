@@ -2,19 +2,21 @@
 
 zsh_url="https://sourceforge.net/projects/zsh/files/latest/download"
 
-wget ${zsh_url} -O zsh.tar.xz
+if type "zsh" > /dev/null 2>&1 ; then
+  echo "Already installed zsh ✔︎"
+else
+  echo "Install zsh"
 
-mkdir zsh-temp
+  wget ${zsh_url} -O zsh.tar.xz
+  mkdir zsh-temp
+  tar xvf zsh.tar.xz -C zsh-temp --strip-components 1
+  cd zsh-temp
 
-tar xvf zsh.tar.xz -C zsh-temp --strip-components 1
+  ./configure --prefix=$HOME/.local --disable-shared
 
-cd zsh-temp
+  make
+  make install
 
-./configure --prefix=$HOME/.local --disable-shared
-
-make
-make install
-
-cd ..
-
-rm -rf zsh-temp
+  cd ..
+  rm -rf zsh-temp
+fi
