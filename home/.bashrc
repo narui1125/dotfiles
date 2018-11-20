@@ -17,6 +17,4 @@ export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 
 # zsh
-if [ "$SSH_TTY" != "" ]; then
-	exec zsh
-fi
+exec zsh
