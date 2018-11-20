@@ -7,7 +7,7 @@ export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 
 # TSUBAME
-if [ "${MACHINE_TYPE}" = "TSUBAME" ]; then
+if [ "${MODULE_VERSION_STACK}" != "" ]; then
   # Core
   ulimit -c unlimited
   # OpenMP
