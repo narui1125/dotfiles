@@ -12,7 +12,7 @@ powerline-daemon -q
 # TSUBAME
 if [ "${SSH_CONNECTION}" != "" ]; then
   # tmux
-  if [[ ! -n $TMUX ]]; then
+  if [[ ! -n $TMUX && $- == *l* ]]; then
     # get the IDs
     ID="`tmux list-sessions`"
     if [[ -z "$ID" ]]; then
@@ -23,8 +23,11 @@ if [ "${SSH_CONNECTION}" != "" ]; then
     ID="`echo $ID | $PERCOL | cut -d: -f1`"
     if [[ "$ID" = "${create_new_session}" ]]; then
       tmux new-session
+    elif [[ -n "$ID" ]]; then
+      tmux attach-session -t "$ID"
+    else
+      :  # Start terminal normally
     fi
-    tmux attach-session -t "$ID"
   fi
 fi
 
