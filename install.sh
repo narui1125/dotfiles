@@ -18,6 +18,8 @@ download(){
 deploy(){
 	BIN_DIR="${SCRIPT_DIR}/bin"
 
+	printf "\e[1;34m=== Install Applications ===\e[0m \n"
+
 	# TSUBAME
 	if [ "$1" == "TSUBAME" ]; then
 		# ライブラリ
@@ -25,14 +27,20 @@ deploy(){
 		sh ${BIN_DIR}/install-ncurses.sh "$1"
 
 		sh ${BIN_DIR}/install-zsh.sh "$1"
+		sh ${BIN_DIR}/install-pyenv.sh "$1"
 		sh ${BIN_DIR}/install-tmux.sh "$1"
 		sh ${BIN_DIR}/install-powerline-status.sh "$1"
+
+		source ~/.bashrc
 
 	# Local
 	elif [ "$1" == "Local" ]; then
 		sh ${BIN_DIR}/install-zsh.sh "$1"
+		sh ${BIN_DIR}/install-pyenv.sh "$1"
 		sh ${BIN_DIR}/install-tmux.sh "$1"
 		sh ${BIN_DIR}/install-powerline-status.sh "$1"
+
+		source ~/.bashrc
 
 	# Error
 	else
@@ -44,7 +52,7 @@ deploy(){
 initalize(){
 	DOTPATH="${SCRIPT_DIR}/home"
 
-	echo "Created dotfile symbolic links."
+	printf "\e[1;34m=== Created dotfile symbolic links ===\e[0m \n"
 
 	cd ${DOTPATH}
 
@@ -55,7 +63,7 @@ initalize(){
 
 		ln -snf "${DOTPATH}/$f" "${HOME}/$f"
 		if [ $? -eq 0 ]; then
-			printf "\t%-25s -> %s\n" "${DOTPATH}/$f" "${HOME}/$f"
+			printf "%-25s -> %s\n" "${DOTPATH}/$f" "${HOME}/$f"
 		fi
 	done
 }
