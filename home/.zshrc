@@ -5,19 +5,18 @@ export PATH="$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
-export PYTHONPATH="$HOME/.local/lib/python3.6/site-packages:$PYTHONPATH"
 
-# Core
-ulimit -c unlimited
-
-# OpenMP
-export OMP_NUM_THREADS=32
-
-# module
-export MODULEPATH=/gs/hs0/tga-ishidalab/share/modulefiles:$MODULEPATH
-
-# aliase
-alias get_node="qrsh -l f_node=1 -l h_rt=0:10:00"
+# TSUBAME
+if [ "${MACHINE_TYPE}" = "TSUBAME" ]; then
+  # Core
+  ulimit -c unlimited
+  # OpenMP
+  export OMP_NUM_THREADS=32
+  # module
+  export MODULEPATH=/gs/hs0/tga-ishidalab/share/modulefiles:$MODULEPATH
+  # aliase
+  alias get_node="qrsh -l f_node=1 -l h_rt=0:10:00"
+fi
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -28,8 +27,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # PowerLine Shell
+export POWERLINE_ROOT="${HOME}/.pyenv/versions/3.7.0/lib/python3.7/site-packages/powerline"
 powerline-daemon -q
-. ~/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+. ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
 
 # 補完
 autoload -U compinit
