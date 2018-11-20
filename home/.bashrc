@@ -17,8 +17,6 @@ export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 
 # zsh
-if [ "$SSH_TTY" == "" ] && [ "$SSH_CONNECTION" != "" ]; then
-	echo "SCP client"
-else
+if [ "$SSH_TTY" != "" ] || [ "$SSH_CONNECTION" == "" ]; then
 	exec zsh
 fi
