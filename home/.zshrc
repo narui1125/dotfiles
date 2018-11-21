@@ -5,6 +5,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# PowerLine
+powerline-daemon -q
+. ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
+
 # TSUBAME
 if [ "${SSH_CONNECTION}" != "" ]; then
   # tmux
@@ -18,10 +22,6 @@ if [ "${SSH_CONNECTION}" != "" ]; then
     fi
   fi
 fi
-
-# PowerLine
-powerline-daemon -q
-. ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
 
 # zsh
 
