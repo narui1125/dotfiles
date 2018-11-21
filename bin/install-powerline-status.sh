@@ -10,7 +10,7 @@ fi
 
 echo "Install PowerLine-status"
 
-pip install powerline-status
+pip install --user powerline-status
 
 git clone ${powerline_font_url}
 cd fonts

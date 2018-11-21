@@ -23,5 +23,5 @@ export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:${PATH}"
 
 # PowerLine
-export POWERLINE_ROOT="${HOME}/.pyenv/versions/3.7.0/lib/python3.7/site-packages/powerline"
-export PYTHONPATH="${HOME}/.pyenv/versions/3.7.0/lib/python3.7/site-packages:${PYTHONPATH}"
+export POWERLINE_ROOT="${HOME}/.local/lib/python3.7/site-packages/powerline"
+export PYTHONPATH="${HOME}/.local/lib/python3.7/site-packages:${PYTHONPATH}"
