@@ -22,10 +22,11 @@ deploy(){
 
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
-	sh ${BIN_DIR}/install-zsh.sh "$1"
-	sh ${BIN_DIR}/install-pyenv.sh "$1"
-	sh ${BIN_DIR}/install-tmux.sh "$1"
-	sh ${BIN_DIR}/install-powerline-status.sh "$1"
+	sh ${BIN_DIR}/install-zsh.sh
+	sh ${BIN_DIR}/install-pyenv.sh
+	sh ${BIN_DIR}/install-tmux.sh
+	sh ${BIN_DIR}/install-powerline-status.sh
+	sh ${BIN_DIR}/install-boost.sh
 }
 
 ## configure
