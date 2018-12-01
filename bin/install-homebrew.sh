@@ -12,7 +12,7 @@ fi
 # インストール
 echo "\e[1;34mInstall homebrew\e[0m\n"
 
-OS=${uname}
+OS=$(uname)
 
 if [ "${OS}" == "Darwin" ]; then
   #macOS
