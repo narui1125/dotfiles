@@ -20,6 +20,9 @@ if [ "${OS}" == "Darwin" ]; then
 elif [ "${OS}" == "Linux" ]; then
   #Linux
   sh -c "$(curl -fsSL ${linuxbrew_url})"
+
+  test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+  test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 else
   echo "${OS} is not supported"
 fi
