@@ -17,3 +17,12 @@ if type "brew" > /dev/null 2>&1 ; then
 else
   git clone ${pyenv_url} ~/.pyenv
 fi
+
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:${PATH}"
+
+eval "$(pyenv init -)"
+
+pyenv install 3.7.0
+
+pyenv global 3.7.0
