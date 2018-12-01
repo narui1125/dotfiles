@@ -7,7 +7,7 @@ export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 export PYTHONPATH="$HOME/.local/:$PYTHONPATH"
 
-if [ "$(uname)" == "Linux" ]; then
+if [ "$(uname)" "==" "Linux" ]; then
   #Linux
   export PATH="$HOME/.linuxbrew/bin:$PATH"
 fi
