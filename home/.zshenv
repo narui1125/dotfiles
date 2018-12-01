@@ -11,7 +11,11 @@ export INFOPATH="$HOME/.local/share/info:$INFOPATH"
 
 if [ "$(uname)" "==" "Linux" ]; then
   #Linux
-  eval($HOME/.linuxbrew/bin/brew shellenv)
+  export HOMEBREW_CELLAR="$HOME/.linuxbrew/Cellar"
+  export HOMEBREW_REPOSITORY="$HOME/.linuxbrew/Homebrew"
+  export PATH="$HOME/.linuxbrew/bin:/home/6/15B10980/.linuxbrew/sbin:$PATH"
+  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
   export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
   export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$CPLUS_INCLUDE_PATH"
   export LD_LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LD_LIBRARY_PATH"
