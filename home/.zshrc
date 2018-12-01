@@ -1,4 +1,4 @@
-# Created by newuser for 5.6.2
+# .zshrc
 
 # Pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -9,7 +9,7 @@ fi
 powerline-daemon -q
 . ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
 
-# TSUBAME
+# SSHならtmuxを起動
 if [ "${SSH_CONNECTION}" != "" ]; then
   # tmux
   if [[ ! -n $TMUX ]]; then
