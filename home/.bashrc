@@ -10,15 +10,6 @@ fi
 
 # User specific aliases and function
 
-# locale
-export LC_ALL=ja_JP.UTF-8
-
-# path
-export PATH="$HOME/.local/bin:$PATH"
-export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
-export MANPATH="$HOME/.local/share/man:$MANPATH"
-
 # zsh
 if [ "$SSH_TTY" != "" ] || [ "$SSH_CONNECTION" == "" ]; then
 	exec zsh
