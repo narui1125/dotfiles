@@ -9,7 +9,7 @@ if type "zsh" > /dev/null 2>&1 ; then
 fi
 
 # インストール
-echo "Install zsh"
+echo "\e[1;34mInstall zsh\e[0m\n"
 
 if type "brew" > /dev/null 2>&1 ; then
   # brewがつかえるならbrewでインストール

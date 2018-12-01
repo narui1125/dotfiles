@@ -9,7 +9,7 @@ if type "tmux" > /dev/null 2>&1 ; then
 fi
 
 # インストール
-echo "Install tmux"
+echo "\e[1;34mInstall tmux\e[0m\n"
 
 if type "brew" > /dev/null 2>&1 ; then
   # brewがつかえるならbrewでインストール

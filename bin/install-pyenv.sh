@@ -9,7 +9,7 @@ if type "pyenv" > /dev/null 2>&1 ; then
 fi
 
 # インストール
-echo "Install pyenv"
+echo "\e[1;34mInstall pyenv\e[0m\n"
 
 if type "brew" > /dev/null 2>&1 ; then
   # brewがつかえるならbrewでインストール

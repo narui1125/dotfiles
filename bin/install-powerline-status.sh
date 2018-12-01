@@ -9,7 +9,7 @@ if type "powerline" > /dev/null 2>&1 ; then
 fi
 
 # インストール
-echo "Install PowerLine-status"
+echo "\e[1;34mInstall PowerLine-status\e[0m\n"
 
 pip install --user powerline-status
 

@@ -6,7 +6,7 @@ SCRIPT_DIR=$(cd $(dirname $0);pwd)
 download(){
 	local GIT_URL="https://github.com/narui1125/dotfiles"
 
-	printf "\e[1;34m=== Download Repository ===\e[0m \n"
+	printf "\e[1;34m=== Download Repository ===\e[0m\n"
 
 	if has "git"; then
 		git clone --recursive "${GIT_URL}"

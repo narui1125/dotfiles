@@ -10,7 +10,7 @@ if type "brew" > /dev/null 2>&1 ; then
 fi
 
 # インストール
-echo "Install homebrew"
+echo "\e[1;34mInstall homebrew\e[0m\n"
 
 OS=${uname}
 
