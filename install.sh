@@ -22,28 +22,10 @@ deploy(){
 
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
-	# Install from source
-	if [ "$1" == "no-root" ]; then
-		# ライブラリ
-		sh ${BIN_DIR}/install-libevent.sh "$1"
-		sh ${BIN_DIR}/install-ncurses.sh "$1"
-
-		sh ${BIN_DIR}/install-zsh.sh "$1"
-		sh ${BIN_DIR}/install-pyenv.sh "$1"
-		sh ${BIN_DIR}/install-tmux.sh "$1"
-		sh ${BIN_DIR}/install-powerline-status.sh "$1"
-
-	# Install with Homebrew
-	elif [ "$1" == "homebrew" ]; then
-		sh ${BIN_DIR}/install-zsh.sh "$1"
-		sh ${BIN_DIR}/install-pyenv.sh "$1"
-		sh ${BIN_DIR}/install-tmux.sh "$1"
-		sh ${BIN_DIR}/install-powerline-status.sh "$1"
-
-	# Error
-	else
-		echo "error"
-	fi
+	sh ${BIN_DIR}/install-zsh.sh "$1"
+	sh ${BIN_DIR}/install-pyenv.sh "$1"
+	sh ${BIN_DIR}/install-tmux.sh "$1"
+	sh ${BIN_DIR}/install-powerline-status.sh "$1"
 }
 
 ## configure

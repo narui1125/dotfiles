@@ -8,6 +8,7 @@ if type "powerline" > /dev/null 2>&1 ; then
   exit 0
 fi
 
+# インストール
 echo "Install PowerLine-status"
 
 pip install --user powerline-status

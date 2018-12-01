@@ -8,10 +8,17 @@ if type "tmux" > /dev/null 2>&1 ; then
   exit 0
 fi
 
+# インストール
 echo "Install tmux"
 
-# TSUBAME
-if [ "$1" == "TSUBAME" ]; then
+if type "brew" > /dev/null 2>&1 ; then
+  # brewがつかえるならbrewでインストール
+  brew install tmux
+else
+  # 依存
+  sh ${BIN_DIR}/install-libevent.sh
+  sh ${BIN_DIR}/install-ncurses.sh
+
   wget ${tmux_url} -O tmux.tar.xz
   mkdir tmux-temp
   tar xvf tmux.tar.xz -C tmux-temp --strip-components 1
@@ -24,21 +31,4 @@ if [ "$1" == "TSUBAME" ]; then
 
   cd ..
   rm -rf tmux-temp
-
-  exit 0
-
-# Local
-elif [ "$1" == "Local" ]; then
-  if [ ! type "brew" > /dev/null 2>&1 ]; then
-    sh install-homebrew.sh
-  fi
-  brew install tmux
-
-  exit 0
-
-# その他
-else
-  echo "Unkown Platform"
-
-  exit 1
 fi

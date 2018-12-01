@@ -8,15 +8,18 @@ if type "zsh" > /dev/null 2>&1 ; then
   exit 0
 fi
 
+# インストール
 echo "Install zsh"
 
-# TSUBAME
-if [ "$1" == "TSUBAME" ]; then
+if type "brew" > /dev/null 2>&1 ; then
+  # brewがつかえるならbrewでインストール
+  brew install zsh
+else
   wget ${zsh_url} -O zsh.tar.xz
   mkdir zsh-temp
   tar xvf zsh.tar.xz -C zsh-temp --strip-components 1
-  cd zsh-temp
 
+  cd zsh-temp
   ./configure --prefix=$HOME/.local --disable-shared
 
   make
@@ -24,19 +27,4 @@ if [ "$1" == "TSUBAME" ]; then
 
   cd ..
   rm -rf zsh-temp
-
-# Local
-elif [ "$1" == "Local" ]; then
-  if [ ! type "zsh" > /dev/null 2>&1 ]; then
-    sh install-homebrew.sh
-  fi
-  brew install zsh
-
-  exit 0
-
-# その他
-else
-  echo "Unkown Platform"
-
-  exit 1
 fi

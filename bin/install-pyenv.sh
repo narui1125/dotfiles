@@ -8,25 +8,12 @@ if type "pyenv" > /dev/null 2>&1 ; then
   exit 0
 fi
 
+# インストール
 echo "Install pyenv"
 
-# TSUBAME
-if [ "$1" == "TSUBAME" ]; then
-  git clone ${pyenv_url} ~/.pyenv
-  exit 0
-
-# Local
-elif [ "$1" == "Local" ]; then
-  if [ ! type "brew" > /dev/null 2>&1 ]; then
-    sh install-homebrew.sh
-  fi
+if type "brew" > /dev/null 2>&1 ; then
+  # brewがつかえるならbrewでインストール
   brew install pyenv
-
-  exit 0
-
-# その他
 else
-  echo "Unkown Platform"
-
-  exit 1
+  git clone ${pyenv_url} ~/.pyenv
 fi
