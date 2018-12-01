@@ -10,6 +10,7 @@ export CPLUS_INCLUDE_PATH="$HOME/.local/include:$CPLUS_INCLUDE_PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
+export INFOPATH="$HOME/.local/share/info:$INFOPATH"
 
 if [ "$(uname)" == "Linux" ]; then
   #Linux
@@ -19,6 +20,7 @@ if [ "$(uname)" == "Linux" ]; then
   export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
   export PKG_CONFIG_PATH="$HOME/.linuxbrew/lib/pkgconfig:$PKG_CONFIG_PATH"
   export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 	eval($HOME/.linuxbrew/bin/brew shellenv)
 fi
