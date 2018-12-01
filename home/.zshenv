@@ -11,10 +11,11 @@ export INFOPATH="$HOME/.local/share/info:$INFOPATH"
 
 if [ "$(uname)" "==" "Linux" ]; then
   #Linux
-  export C_INCLUDE_PATH="$HOME/.linuxbrew/include:$C_INCLUDE_PATH"
-  export CPLUS_INCLUDE_PATH="$HOME/.linuxbrew/include:$CPLUS_INCLUDE_PATH"
-  export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
-  export PKG_CONFIG_PATH="$HOME/.linuxbrew/lib/pkgconfig:$PKG_CONFIG_PATH"
+  eval($HOME/.linuxbrew/bin/brew shellenv)
+  export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
+  export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$CPLUS_INCLUDE_PATH"
+  export LD_LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LD_LIBRARY_PATH"
+  export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
 fi
 
 # TSUBAME
