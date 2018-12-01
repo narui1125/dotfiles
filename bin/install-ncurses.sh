@@ -10,7 +10,7 @@ tar xvf ncurses.tar.xz -C ncurses-temp --strip-components 1
 
 cd ncurses-temp
 
-./configure --prefix=$HOME/.local --disable-shared
+./configure --prefix=${HOME}/.local --disable-shared
 
 make
 make install

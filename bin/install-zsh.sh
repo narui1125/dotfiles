@@ -20,7 +20,7 @@ else
   tar xvf zsh.tar.xz -C zsh-temp --strip-components 1
 
   cd zsh-temp
-  ./configure --prefix=$HOME/.local --disable-shared
+  ./configure --prefix=${HOME}/.local --disable-shared
 
   make
   make install

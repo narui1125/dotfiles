@@ -24,7 +24,7 @@ else
   tar xvf tmux.tar.xz -C tmux-temp --strip-components 1
 
   cd tmux-temp
-  ./configure --prefix=$HOME/.local --disable-shared
+  ./configure --prefix=${HOME}/.local --disable-shared
 
   make
   make install

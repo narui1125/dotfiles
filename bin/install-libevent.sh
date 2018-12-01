@@ -10,7 +10,7 @@ tar xvf libevent.tar.xz -C libevent-temp --strip-components 1
 
 cd libevent-temp
 
-./configure --prefix=$HOME/.local --disable-shared
+./configure --prefix=${HOME}/.local --disable-shared
 
 make
 make install
