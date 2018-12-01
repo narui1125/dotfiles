@@ -1,5 +1,7 @@
 #!/bin/bash
 
+boost_url="https://dl.bintray.com/boostorg/release/1.67.0/source/boost_1_67_0.tar.gz"
+
 # インストール
 echo "Install boost"
 
@@ -7,7 +9,7 @@ if type "brew" > /dev/null 2>&1 ; then
   # brewがつかえるならbrewでインストール
   brew install boost
 else
-  wget ${libevent_url} -O boost.tar.xz
+  wget ${boost_url} -O boost.tar.xz
 
   mkdir boost-temp
 
