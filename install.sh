@@ -27,6 +27,7 @@ deploy(){
 	sh ${BIN_DIR}/install-tmux.sh
 	sh ${BIN_DIR}/install-powerline-status.sh
 	sh ${BIN_DIR}/install-boost.sh
+	sh ${BIN_DIR}/install-flann.sh
 }
 
 ## configure
