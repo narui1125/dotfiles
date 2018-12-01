@@ -2,7 +2,7 @@
 
 ncurses_url="ftp://ftp.invisible-island.net/ncurses/ncurses.tar.gz"
 
-echo "\e[1;34mInstall ncurses\e[0m\n"
+printf "\e[1;34mInstall ncurses\e[0m\n"
 
 wget ${ncurses_url} -O ncurses.tar.xz
 

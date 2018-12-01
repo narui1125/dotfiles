@@ -3,7 +3,7 @@
 boost_url="https://dl.bintray.com/boostorg/release/1.67.0/source/boost_1_67_0.tar.gz"
 
 # インストール
-echo "\e[1;34mInstall boost\e[0m\n"
+printf "\e[1;34mInstall boost\e[0m\n"
 
 if type "brew" > /dev/null 2>&1 ; then
   # brewがつかえるならbrewでインストール
