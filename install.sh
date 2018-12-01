@@ -61,6 +61,6 @@ initalize(){
 	source ~/.bashrc
 }
 
-deploy "homebrew"
+deploy
 
 initalize
