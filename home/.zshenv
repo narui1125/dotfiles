@@ -11,6 +11,7 @@ export INFOPATH="$HOME/.local/share/info:$INFOPATH"
 
 if [ "$(uname)" "==" "Linux" ]; then
   #Linux
+  export HOMEBREW_PREFIX="$HOME/.linuxbrew"
   export HOMEBREW_CELLAR="$HOME/.linuxbrew/Cellar"
   export HOMEBREW_REPOSITORY="$HOME/.linuxbrew/Homebrew"
   export PATH="$HOME/.linuxbrew/bin:/home/6/15B10980/.linuxbrew/sbin:$PATH"
