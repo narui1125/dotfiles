@@ -14,13 +14,11 @@ if [ "$(uname)" "==" "Linux" ]; then
   export HOMEBREW_PREFIX="$HOME/.linuxbrew"
   export HOMEBREW_CELLAR="$HOME/.linuxbrew/Cellar"
   export HOMEBREW_REPOSITORY="$HOME/.linuxbrew/Homebrew"
-  export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
-  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+  export PATH="$HOMEBREW_PREFIX/bin:$HOME/.linuxbrew/sbin:$PATH"
+  export MANPATH="$HOMEBREW_PREFIX/share/man:$MANPATH"
+  export INFOPATH="$HOMEBREW_PREFIX/share/info:$INFOPATH"
   export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
   export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$CPLUS_INCLUDE_PATH"
-  export LD_LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LD_LIBRARY_PATH"
-  export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
 fi
 
 # TSUBAME
