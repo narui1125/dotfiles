@@ -4,10 +4,11 @@
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
 export INFOPATH="$HOME/.local/share/info:$INFOPATH"
+export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 export C_INCLUDE_PATH="$HOME/.local/include:$C_INCLUDE_PATH"
 export CPLUS_INCLUDE_PATH="$HOME/.local/include:$CPLUS_INCLUDE_PATH"
-export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
 # Linuxbrew
 if [ "$(uname)" "==" "Linux" ]; then
@@ -19,11 +20,14 @@ if [ "$(uname)" "==" "Linux" ]; then
 
   export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
   export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX/Homebrew"
+
   export PATH="$HOMEBREW_PREFIX/bin:$HOME/.linuxbrew/sbin:$PATH"
   export MANPATH="$HOMEBREW_PREFIX/share/man:$MANPATH"
   export INFOPATH="$HOMEBREW_PREFIX/share/info:$INFOPATH"
+
   export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
   export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$CPLUS_INCLUDE_PATH"
+  export LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LIBRARY_PATH"
 fi
 
 # Pyenv
