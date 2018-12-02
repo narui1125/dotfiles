@@ -22,13 +22,13 @@ deploy(){
 
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
-	sh ${BIN_DIR}/install-homebrew.sh
-	sh ${BIN_DIR}/install-zsh.sh
-	sh ${BIN_DIR}/install-pyenv.sh
-	sh ${BIN_DIR}/install-tmux.sh
-	sh ${BIN_DIR}/install-powerline-status.sh
-	sh ${BIN_DIR}/install-boost.sh
-	sh ${BIN_DIR}/install-flann.sh
+	source ${BIN_DIR}/install-homebrew.sh
+	source ${BIN_DIR}/install-zsh.sh
+	source ${BIN_DIR}/install-pyenv.sh
+	source ${BIN_DIR}/install-tmux.sh
+	source ${BIN_DIR}/install-powerline-status.sh
+	source ${BIN_DIR}/install-boost.sh
+	source ${BIN_DIR}/install-flann.sh
 }
 
 ## configure
