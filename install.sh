@@ -22,6 +22,7 @@ deploy(){
 
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
+	sh ${BIN_DIR}/install-homebrew.sh
 	sh ${BIN_DIR}/install-zsh.sh
 	sh ${BIN_DIR}/install-pyenv.sh
 	sh ${BIN_DIR}/install-tmux.sh
