@@ -1,12 +1,6 @@
 # .zshrc
 
-# Pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 # PowerLine
-powerline-daemon -q
 . ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
 
 # SSHならtmuxを起動
