@@ -1,7 +1,7 @@
 #!/bin/bash
 
 homebrew_url="https://raw.githubusercontent.com/Homebrew/install/master/install"
-linuxbrew_url="https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh"
+linuxbrew_url="https://github.com/Linuxbrew/brew"
 
 # すでにインストールされているか確認
 if type "brew" > /dev/null 2>&1 ; then
@@ -19,13 +19,14 @@ if [ "${OS}" == "Darwin" ]; then
   /usr/bin/ruby -e "$(curl -fsSL ${homebrew_url})"
 elif [ "${OS}" == "Linux" ]; then
   #Linux
-  sh -c "$(curl -fsSL ${linuxbrew_url})"
+  git clone ${linuxbrew_url} ~/.linuxbrew/Homebrew
 
-  test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-  test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  mkdir ~/.linuxbrew/bin
+  ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
 
-  test -d ~/.linuxbrew && export PATH="~/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
-  test -d /home/linuxbrew/.linuxbrew && export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+  eval $(~/.linuxbrew/bin/brew shellenv)
+
+  test -d ~/.linuxbrew && export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 else
   echo "${OS} is not supported"
 fi
