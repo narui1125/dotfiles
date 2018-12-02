@@ -19,7 +19,7 @@ if [ "${OS}" == "Darwin" ]; then
   /usr/bin/ruby -e "$(curl -fsSL ${homebrew_url})"
 elif [ "${OS}" == "Linux" ]; then
   #Linux
-  git clone ${linuxbrew_url} https://github.com/Linuxbrew/brew ~/.linuxbrew/Homebrew
+  git clone ${linuxbrew_url} ~/.linuxbrew/Homebrew
 
   mkdir ~/.linuxbrew/bin
   ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
