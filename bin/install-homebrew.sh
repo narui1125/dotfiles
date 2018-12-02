@@ -20,10 +20,7 @@ if [ "${OS}" == "Darwin" ]; then
 elif [ "${OS}" == "Linux" ]; then
   #Linux
   sh -c "$(curl -fsSL ${linuxbrew_url})"
-
-  test -d ~/.linuxbrew && export PATH="$HOME/.linuxbrew/bin:$PATH"
-  test -d /home/linuxbrew/.linuxbrew && export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-
+  
   test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
   test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 else
