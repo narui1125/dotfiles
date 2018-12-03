@@ -8,7 +8,8 @@ export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 export C_INCLUDE_PATH="$HOME/.local/include:$C_INCLUDE_PATH"
 export CPLUS_INCLUDE_PATH="$HOME/.local/include:$CPLUS_INCLUDE_PATH"
-export LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
+export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
 # Linuxbrew
 if [ "$(uname)" "==" "Linux" ]; then
