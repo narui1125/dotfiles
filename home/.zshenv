@@ -50,6 +50,7 @@ if [ "${MODULE_VERSION_STACK}" != "" ]; then
   # OpenMP
   export OMP_NUM_THREADS=32
   # module
+  . /etc/profile.d/modules.sh
   export MODULEPATH=/gs/hs0/tga-ishidalab/share/modulefiles:$MODULEPATH
   # aliase
   alias get_node="qrsh -l f_node=1 -l h_rt=0:10:00"
