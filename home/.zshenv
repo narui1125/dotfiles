@@ -24,6 +24,7 @@ if [ "$(uname)" "==" "Linux" ]; then
   export PATH="$HOMEBREW_PREFIX/bin:$HOME/.linuxbrew/sbin:$PATH"
   export MANPATH="$HOMEBREW_PREFIX/share/man:$MANPATH"
   export INFOPATH="$HOMEBREW_PREFIX/share/info:$INFOPATH"
+  export PKG_CONFIG_PATH="$HOMEBREW_PREFIX/lib/pkgconfig:$PKG_CONFIG_PATH"
 
   export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
   export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$CPLUS_INCLUDE_PATH"
