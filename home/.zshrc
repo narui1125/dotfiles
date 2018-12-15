@@ -17,6 +17,11 @@ if [ "${SSH_CONNECTION}" != "" ]; then
   fi
 fi
 
+# Pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # zsh
 
 ## 補完
