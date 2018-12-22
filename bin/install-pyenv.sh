@@ -21,8 +21,19 @@ else
 
   eval "$(pyenv init -)"
 
+  # mojave zlib
+  sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+
+  pyenv install 2.7.15
   pyenv install 3.7.0
+
+  pyenv global 2.7.15
+
+  pip install --upgrade pip
+  pip install -r requirements.txt
+
   pyenv global 3.7.0
 
+  pip install --upgrade pip
   pip install -r requirements.txt
 fi

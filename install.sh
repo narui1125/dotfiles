@@ -35,7 +35,7 @@ deploy(){
 	if [ "$(uname)" == "Darwin" ]; then
 		# install dir = Home/Applications
 		export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
-		brew bundle --file="Brewfile"
+		brew bundle --file="${BIN_DIR}/Brewfile"
 	fi
 }
 
