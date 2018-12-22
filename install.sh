@@ -26,6 +26,7 @@ deploy(){
 	source ${BIN_DIR}/install-homebrew.sh
 	source ${BIN_DIR}/install-zsh.sh
 	source ${BIN_DIR}/install-pyenv.sh
+	source ${BIN_DIR}/install-vim.sh
 	source ${BIN_DIR}/install-tmux.sh
 	source ${BIN_DIR}/install-powerline-status.sh
 	source ${BIN_DIR}/install-boost.sh
