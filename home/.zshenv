@@ -32,6 +32,9 @@ if [ "$(uname)" "==" "Linux" ]; then
   export LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LIBRARY_PATH"
 fi
 
+# brew cask
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications
+
 # Pyenv
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:${PATH}"

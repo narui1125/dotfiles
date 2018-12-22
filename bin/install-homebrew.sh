@@ -15,6 +15,9 @@ else
   if [ "${OS}" == "Darwin" ]; then
     #macOS
     /usr/bin/ruby -e "$(curl -fsSL ${homebrew_url})"
+
+    #brew cask
+    brew tap caskroom/cask
   elif [ "${OS}" == "Linux" ]; then
     #Linux
     git clone ${linuxbrew_url} ~/.linuxbrew/Homebrew

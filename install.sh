@@ -22,6 +22,7 @@ deploy(){
 
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
+	#install CUI Applications
 	source ${BIN_DIR}/install-homebrew.sh
 	source ${BIN_DIR}/install-zsh.sh
 	source ${BIN_DIR}/install-pyenv.sh
@@ -29,6 +30,13 @@ deploy(){
 	source ${BIN_DIR}/install-powerline-status.sh
 	source ${BIN_DIR}/install-boost.sh
 	source ${BIN_DIR}/install-flann.sh
+
+	#install GUI Applications via brew cask
+	if [ $(uname) == "Darwin" ]; then
+		# install dir = Home/Applications
+		export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+		brew bundle brewfile.txt
+	fi
 }
 
 ## configure
