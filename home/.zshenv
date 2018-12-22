@@ -33,7 +33,7 @@ if [ "$(uname)" "==" "Linux" ]; then
 fi
 
 # brew cask
-export HOMEBREW_CASK_OPTS="--appdir=~/Applications
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
 # Pyenv
 export PYENV_ROOT="${HOME}/.pyenv"
