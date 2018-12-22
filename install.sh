@@ -31,7 +31,7 @@ deploy(){
 	source ${BIN_DIR}/install-boost.sh
 
 	#install GUI Applications via brew cask
-	if [ $(uname) == "Darwin" ]; then
+	if [ "$(uname)" == "Darwin" ]; then
 		# install dir = Home/Applications
 		export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 		brew bundle brewfile.txt
