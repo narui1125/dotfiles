@@ -30,6 +30,7 @@ deploy(){
 	source ${BIN_DIR}/install-tmux.sh
 	source ${BIN_DIR}/install-powerline-status.sh
 	source ${BIN_DIR}/install-boost.sh
+	source ${BIN_DIR}/install-cmake.sh
 
 	# install GUI Applications via brew cask
 	if [ "$(uname)" == "Darwin" ]; then
