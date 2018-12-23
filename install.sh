@@ -75,6 +75,7 @@ initalize(){
 	sudo tlmgr update --self --all
 	sudo tlmgr paper a4
 	sudo tlmgr install collection-langjapanese
+	sudo tlmgr install latexmk
 }
 
 deploy
