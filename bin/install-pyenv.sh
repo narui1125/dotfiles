@@ -1,6 +1,7 @@
 #!/bin/bash
 
 pyenv_url="https://github.com/pyenv/pyenv.git"
+SCRIPT_DIR=$(cd $(dirname $0);pwd)
 
 # すでにインストールされているか確認
 if type "pyenv" > /dev/null 2>&1 ; then
@@ -30,10 +31,10 @@ else
   pyenv global 2.7.15
 
   pip install --upgrade pip
-  pip install -r requirements.txt
+  pip install -r ${SCRIPT_DIR}/requirements.txt
 
   pyenv global 3.7.0
 
   pip install --upgrade pip
-  pip install -r requirements.txt
+  pip install -r ${SCRIPT_DIR}/requirements.txt
 fi
