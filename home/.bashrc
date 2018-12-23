@@ -9,8 +9,3 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and function
-
-# zsh
-if [ "$SSH_TTY" != "" ] || [ "$SSH_CONNECTION" == "" ]; then
-	exec zsh
-fi
