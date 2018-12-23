@@ -31,7 +31,7 @@ deploy(){
 	source ${BIN_DIR}/install-powerline-status.sh
 	source ${BIN_DIR}/install-boost.sh
 
-	#install GUI Applications via brew cask
+	# install GUI Applications via brew cask
 	if [ "$(uname)" == "Darwin" ]; then
 		# install dir = Home/Applications
 		export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
@@ -70,6 +70,11 @@ initalize(){
 	cd
 
 	source ~/.bashrc
+
+	# basictex
+	sudo tlmgr update --self --all
+	sudo tlmgr paper a4
+	sudo tlmgr install collection-langjapanese
 }
 
 deploy
