@@ -3,20 +3,6 @@
 # PowerLine
 . ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
 
-# SSHならtmuxを起動
-if [ "${SSH_CONNECTION}" != "" ]; then
-  # tmux
-  if [[ ! -n $TMUX ]]; then
-    # get the IDs
-    ID="`tmux list-sessions`"
-    if [[ -z "$ID" ]]; then
-      tmux new -s "default"
-    else
-      echo "${ID}"
-    fi
-  fi
-fi
-
 # Pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
