@@ -1,5 +1,8 @@
 # .zshenv
 
+# profile
+setopt no_global_rcs
+
 # PATH
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
