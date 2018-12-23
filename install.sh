@@ -70,7 +70,10 @@ initalize(){
 
 	cd
 
-	source ~/.bashrc
+	# シェル切り替え
+	chsh bin/zsh
+
+	zsh
 
 	# basictex
 	sudo tlmgr update --self --all
