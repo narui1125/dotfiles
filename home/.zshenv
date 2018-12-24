@@ -1,7 +1,8 @@
 # .zshenv
 
-# profile
+# うーん
 setopt no_global_rcs
+source /etc/profile
 
 # PATH
 export PATH="$HOME/.local/bin:$PATH"
