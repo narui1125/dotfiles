@@ -31,10 +31,10 @@ else
   pyenv global 2.7.15
 
   pip install --upgrade pip
-  pip install -r ${SCRIPT_DIR}/requirements.txt
+  pip install -r ${SCRIPT_DIR}/bin/requirements.txt
 
   pyenv global 3.7.0
 
   pip install --upgrade pip
-  pip install -r ${SCRIPT_DIR}/requirements.txt
+  pip install -r ${SCRIPT_DIR}/bin/requirements.txt
 fi
