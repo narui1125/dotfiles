@@ -1,5 +1,8 @@
 # .zshrc
 
+# Locale
+export LC_ALL=ja_JP.UTF-8
+
 # PowerLine
 . ${POWERLINE_ROOT}/bindings/zsh/powerline.zsh
 
