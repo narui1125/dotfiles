@@ -58,4 +58,7 @@ if [ "${MODULE_VERSION_STACK}" != "" ]; then
   export MODULEPATH=/gs/hs0/tga-ishidalab/share/modulefiles:$MODULEPATH
   # aliase
   alias get_node="qrsh -l f_node=1 -l h_rt=0:10:00"
+  alias get_h_node="qrsh -l h_node=1 -l h_rt=0:10:00"
+  alias get_q_node="qrsh -l q_node=1 -l h_rt=0:10:00"
+  alias get_s_core="qrsh -l s_core=1 -l h_rt=0:10:00"
 fi
