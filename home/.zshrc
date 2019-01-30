@@ -13,6 +13,11 @@ fi
 
 # zsh
 
+## シンタックスハイライト
+if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 ## 補完
 autoload -U compinit
 compinit
