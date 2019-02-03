@@ -23,6 +23,10 @@ deploy(){
 
 	brew tap caskroom/cask
 	brew bundle --file="${ETC_DIR}/Brewfile"
+
+	printf "\e[1;34m=== Install non Package Manager Applications ===\e[0m \n"
+
+	source "${BIN_DIR}/install-prezto.sh"
 }
 
 # 設定ファイルの展開
