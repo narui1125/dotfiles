@@ -54,6 +54,9 @@ initalize(){
 configure(){
 	printf "\e[1;34m=== Configure Applications ===\e[0m \n"
 
+	# anyenv
+	anyenv install --init
+
 	# basictex
 	tlmgr update --self --all
 	tlmgr paper a4
