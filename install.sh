@@ -28,6 +28,7 @@ deploy(){
 	printf "\e[1;34m=== Install non Package Manager Applications ===\e[0m \n"
 
 	source "${BIN_DIR}/install-prezto.sh"
+	source "${BIN_DIR}/install-nerd-fonts.sh"
 }
 
 # 設定ファイルの展開
