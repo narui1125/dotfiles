@@ -115,7 +115,33 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'pure'
+
+# Customise the Powerlevel9k prompts
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_STRATEGY='truncate_to_first_and_last'
+
+POWERLEVEL9K_HOST_TEMPLATE=''
+POWERLEVEL9K_HOST_ICON='\uF109'
+POWERLEVEL9K_SSH_ICON='\uF489'
+
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
+POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
+POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
+POWERLEVEL9K_VCS_GIT_ICON=''
+
+POWERLEVEL9K_HOST_LOCAL_FOREGROUND='015'
+POWERLEVEL9K_HOST_LOCAL_BACKGROUND='032'
+POWERLEVEL9K_REMOTE_LOCAL_FOREGROUND='black'
+POWERLEVEL9K_REMOTE_LOCAL_BACKGROUND='grey93'
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh host dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(pyenv rbenv nodeenv)
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+# Load Nerd Fonts with Powerlevel9k theme for Zsh
+POWERLEVEL9K_MODE='nerdfont-complete'
+
+zstyle ':prezto:module:prompt' theme 'powerlevel9k'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
