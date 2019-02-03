@@ -35,7 +35,7 @@ deploy(){
 initalize(){
 	local DOTPATH="${HOME_DIR}"
 
-	printf "\e[1;34m=== Created dotfile symbolic links ===\e[0m \n"
+	printf "\e[1;34m=== Create dotfile symbolic links ===\e[0m \n"
 
 	cd ${DOTPATH}
 	for f in .??*
