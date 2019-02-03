@@ -1,8 +1,10 @@
 
-" View
+" color scheme
+set background=dark
+colorscheme hybrid
+
+" view
 syntax enable
 set t_Co=256
 set number
-
-" ステータスラインを常に表示
 set laststatus=2
