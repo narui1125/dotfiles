@@ -34,6 +34,7 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'syntax-highlighting' \
+  'autosuggestions' \
   'spectrum' \
   'utility' \
   'completion' \
