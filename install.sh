@@ -21,6 +21,7 @@ deploy(){
 
 	printf "\e[1;34m=== Install CUI Applications ===\e[0m \n"
 
+	brew update
 	brew tap caskroom/cask
 	brew bundle --file="${ETC_DIR}/Brewfile"
 
