@@ -2,86 +2,59 @@
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 
-## download
-download(){
-	local GIT_URL="https://github.com/narui1125/dotfiles"
+HOME_DIR="${SCRIPT_DIR}/home"
+BIN_DIR="${SCRIPT_DIR}/bin"
+ETC_DIR="${SCRIPT_DIR}/etc"
 
-	printf "\e[1;34m=== Download Repository ===\e[0m\n"
-
-	if has "git"; then
-		git clone --recursive "${GIT_URL}"
-
-	else
-		die "git required"
-	fi
-}
-
-## install
+# アプリケーションのインストール
 deploy(){
-	local BIN_DIR="${SCRIPT_DIR}/bin"
+	printf "\e[1;34m=== Install Package Manager ===\e[0m \n"
+
+	if [ "$(uname)" == "Darwin" ]; then
+		source "${BIN_DIR}/install-homebrew.sh"
+	elif [ "$(uname)" == "Linux" ]; then
+		source "${BIN_DIR}/install-linuxbrew.sh"
+	else
+		printf "\e[1;31m Do not support \e[0m \n"
+		exit 1
+	fi
 
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
-	#install CUI Applications
-	source ${BIN_DIR}/install-homebrew.sh
-	source ${BIN_DIR}/install-zsh.sh
-	source ${BIN_DIR}/install-pyenv.sh
-	source ${BIN_DIR}/install-vim.sh
-	source ${BIN_DIR}/install-tmux.sh
-	source ${BIN_DIR}/install-powerline-status.sh
-	source ${BIN_DIR}/install-boost.sh
-	source ${BIN_DIR}/install-cmake.sh
-
-	# install GUI Applications via brew cask
-	if [ "$(uname)" == "Darwin" ]; then
-		# install dir = Home/Applications
-		export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
-		brew bundle --file="${BIN_DIR}/Brewfile"
-	fi
+	brew bundle --file="${ETC_DIR}/Brewfile"
 }
 
-## configure
+# 設定ファイルの展開
 initalize(){
-	local DOTPATH="${SCRIPT_DIR}/home"
+	local DOTPATH="${HOME_DIR}"
 
 	printf "\e[1;34m=== Created dotfile symbolic links ===\e[0m \n"
 
 	cd ${DOTPATH}
-
-	# backup & make links
 	for f in .??*
 	do
 		[[ "$f" == ".git" ]] && continue
 		[[ "$f" == ".DS_Store" ]] && continue
-
-		BACKUP_PATH="${HOME}/.dotbackup/`date "+%Y-%m-%d_%H:%M:%S"`"
-		if [ -e "${HOME}/$f" ]; then
-			if [ ! -e "${BACKUP_PATH}" ]; then
-					mkdir -p ${BACKUP_PATH}
-			fi
-			mv ${HOME}/$f ${BACKUP_PATH}/$f
-		fi
 
 		ln -snf "${DOTPATH}/$f" "${HOME}/$f"
 		if [ $? -eq 0 ]; then
 			printf "%-25s -> %s\n" "${DOTPATH}/$f" "${HOME}/$f"
 		fi
 	done
-
-	cd
-
-	# シェル切り替え
-	chsh bin/zsh
-
-	zsh
-
-	# basictex
-	sudo tlmgr update --self --all
-	sudo tlmgr paper a4
-	sudo tlmgr install collection-langjapanese
-	sudo tlmgr install latexmk
 }
 
-deploy
+# アプリケーションの個別設定
+configure(){
+	printf "\e[1;34m=== Configure Applications ===\e[0m \n"
 
+	# basictex
+	tlmgr update --self --all
+	tlmgr paper a4
+	tlmgr install collection-langjapanese
+	tlmgr install latexmk
+}
+
+# main
+deploy
 initalize
+configure
