@@ -10,12 +10,8 @@ else
   printf "\e[1;34mInstall linuxbrew\e[0m\n"
 
   #Linux
-  git clone ${linuxbrew_url} ~/.linuxbrew/Homebrew
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 
-  mkdir ~/.linuxbrew/bin
-  ln -s ../Homebrew/bin/brew ~/.linuxbrew/bin
-
+  # Path
   eval $(~/.linuxbrew/bin/brew shellenv)
-
-  test -d ~/.linuxbrew && export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
 fi
