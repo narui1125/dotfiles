@@ -1,6 +1,6 @@
 #!/bin/bash
 
-linuxbrew_url="https://github.com/Linuxbrew/brew"
+brew_sh="https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh"
 
 # すでにインストールされているか確認
 if type "brew" > /dev/null 2>&1 ; then
@@ -9,8 +9,7 @@ else
   # インストール
   printf "\e[1;34mInstall linuxbrew\e[0m\n"
 
-  #Linux
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+  sh -c "$(curl -fsSL ${brew_sh})"
 
   # Path
   eval $(~/.linuxbrew/bin/brew shellenv)
