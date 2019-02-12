@@ -58,13 +58,13 @@ configure(){
 	anyenv install --init
 
 	# basictex
-	tlmgr update --self --all
-	tlmgr paper a4
-	tlmgr install collection-langjapanese
-	tlmgr install latexmk
+	sudo tlmgr update --self --all
+	sudo tlmgr paper a4
+	sudo tlmgr install collection-langjapanese
+	sudo tlmgr install latexmk
 }
 
 # main
 deploy
 initalize
-#configure
+configure
