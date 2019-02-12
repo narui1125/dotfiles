@@ -67,4 +67,4 @@ configure(){
 # main
 deploy
 initalize
-configure
+#configure

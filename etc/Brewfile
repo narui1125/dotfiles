@@ -1,21 +1,36 @@
+tap "caskroom/cask"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-brew "anyenv"
+
+#
+brew "macvim"
+brew "tmux"
+brew "zsh"
+
+#
 brew "boost"
 brew "cmake"
 brew "exiftool"
 brew "hunspell"
-brew "macvim"
-brew "tmux"
+
+#
+brew "anyenv"
+brew "autoconf"
+brew "pkg-config"
+
+#
 cask "atom"
-cask "authy"
-cask "mactex"
+cask "visual-studio-code"
 cask "clion"
+cask "pycharm"
+
+#
+cask "authy"
 cask "docker"
 cask "github"
 cask "iterm2"
+cask "mactex"
 cask "mendeley"
-cask "pycharm"
 cask "slack"
 cask "transmit"
