@@ -24,8 +24,7 @@ deploy(){
 	brew update
 	brew tap caskroom/cask
 
-	# issue
-  HOMEBREW_CURLRC=1 brew bundle --file="${ETC_DIR}/Brewfile"
+	brew bundle --file="${ETC_DIR}/Brewfile"
 
 	printf "\e[1;34m=== Install non Package Manager Applications ===\e[0m \n"
 

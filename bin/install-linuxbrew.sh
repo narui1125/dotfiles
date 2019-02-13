@@ -15,6 +15,11 @@ else
 
   HOMEBREW_CURLRC=1 sh -c "$(curl -fsSL ${brew_sh})"
 
+  rm ~/.curlrc
+  git config --global http.sslVerify true
+
+  export CURL_CA_BUNDLE="~/.linuxbrew/etc/openssl/cert.pem"
+
   # Path
   eval $(~/.linuxbrew/bin/brew shellenv)
 fi
