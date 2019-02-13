@@ -71,6 +71,23 @@ configure(){
 
 	# anyenv
 	anyenv install --init
+	anyenv install pyenv
+
+	exec $SHELL -l
+
+	# pyenv
+	pyenv install 2.7.15
+	pyenv install 3.7.2
+
+	# pyton2
+	pyenv global 2.7.15
+	pip install -U pip
+	pip install -r "${ETC_DIR}/requirements.txt"
+
+	# pyton3
+	pyenv global 3.7.2
+	pip install -U pip
+	pip install -r "${ETC_DIR}/requirements.txt"
 
 	# basictex
 	sudo tlmgr update --self --all
