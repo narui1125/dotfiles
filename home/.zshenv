@@ -15,9 +15,6 @@ export CPLUS_INCLUDE_PATH="$HOME/.local/include:$CPLUS_INCLUDE_PATH"
 export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
-# Anyenv
-eval "$(anyenv init -)"
-
 # OS毎の個別設定
 case ${OSTYPE} in
   darwin*)
@@ -27,3 +24,6 @@ case ${OSTYPE} in
     source "${HOME}/.zsh/.zshenv_linux"
     ;;
 esac
+
+# Anyenv
+eval "$(anyenv init -)"
