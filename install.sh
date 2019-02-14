@@ -55,16 +55,6 @@ initalize(){
 configure(){
 	printf "\e[1;34m=== Configure Applications ===\e[0m \n"
 
-	# zsh
-	if [ "$(uname)" == "Darwin" ]; then
-		chsh -s /bin/zsh
-	elif [ "$(uname)" == "Linux" ]; then
-		chsh /bin/zsh
-	else
-		printf "\e[1;31m Do not support \e[0m \n"
-		exit 1
-	fi
-
 	# シェルの再起動
 	exec $SHELL -l
 
