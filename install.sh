@@ -55,14 +55,13 @@ initalize(){
 configure(){
 	printf "\e[1;34m=== Configure Applications ===\e[0m \n"
 
-	# シェルの再起動
-	exec $SHELL -l
+	exec $SHELL
 
 	# anyenv
 	anyenv install --init
 	anyenv install pyenv
 
-	exec $SHELL -l
+	source ~/.zshrc
 
 	# pyenv
 	pyenv install 2.7.15
@@ -78,11 +77,13 @@ configure(){
 	pip install -U pip
 	pip install -r "${ETC_DIR}/requirements.txt"
 
-	# basictex
-	sudo tlmgr update --self --all
-	sudo tlmgr paper a4
-	sudo tlmgr install collection-langjapanese
-	sudo tlmgr install latexmk
+	if [ "$(uname)" == "Darwin" ]; then
+		# basictex
+		sudo tlmgr update --self --all
+		sudo tlmgr paper a4
+		sudo tlmgr install collection-langjapanese
+		sudo tlmgr install latexmk
+	fi
 }
 
 # main
