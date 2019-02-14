@@ -55,13 +55,11 @@ initalize(){
 configure(){
 	printf "\e[1;34m=== Configure Applications ===\e[0m \n"
 
-	exec $SHELL
-
 	# anyenv
 	anyenv install --init
 	anyenv install pyenv
 
-	source ~/.zshrc
+	eval "$(anyenv init -)"
 
 	# pyenv
 	pyenv install 2.7.15
