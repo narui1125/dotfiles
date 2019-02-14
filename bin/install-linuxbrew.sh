@@ -9,16 +9,7 @@ else
   # インストール
   printf "\e[1;34mInstall linuxbrew\e[0m\n"
 
-  # issue
-  echo insecure >> ~/.curlrc
-  git config --global http.sslVerify false
-
-  HOMEBREW_CURLRC=1 sh -c "$(curl -fsSL ${brew_sh})"
-
-  rm ~/.curlrc
-  git config --global http.sslVerify true
-
-  export CURL_CA_BUNDLE="~/.linuxbrew/etc/openssl/cert.pem"
+  sh -c "$(curl -fsSL ${brew_sh})"
 
   # Path
   eval $(~/.linuxbrew/bin/brew shellenv)
