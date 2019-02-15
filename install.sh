@@ -76,6 +76,9 @@ configure(){
 	pip install -U pip
 	pip install -r "${ETC_DIR}/requirements.txt"
 
+	# powerline-status
+	pip install powerline-status
+
 	# plenv
 	plenv install 5.10.0
 	plenv global 5.10.0

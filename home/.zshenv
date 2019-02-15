@@ -20,8 +20,6 @@ export CPLUS_INCLUDE_PATH="$HOME/.local/include:$CPLUS_INCLUDE_PATH"
 export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
-export PYTHONPATH="${HOME}/.local/lib/python3.7/site-packages:$PYTHONPATH"
-
 # OS毎の個別設定
 case ${OSTYPE} in
   darwin*)
