@@ -33,7 +33,7 @@ deploy(){
 }
 
 # 設定ファイルの展開
-initalize(){
+initialize(){
 	local DOTPATH="${HOME_DIR}"
 
 	printf "\e[1;34m=== Create dotfile symbolic links ===\e[0m \n"
@@ -93,7 +93,29 @@ configure(){
 	fi
 }
 
-# main
-deploy
-initalize
-configure
+while getopts dic OPT
+do
+  case $OPT in
+    "d" ) FLG_DEPLOY="TRUE" ;;
+    "i" ) FLG_INIT="TRUE" ;;
+    "c" ) FLG_CONF="TRUE" ;;
+  esac
+done
+
+if [ $# -e 0 ]; then
+	FLG_DEPLOY="TRUE"
+	FLG_INIT="TRUE"
+	FLG_CONF="TRUE"
+fi
+
+if [ "$FLG_DEPLOY" = "TRUE" ]; then
+	deploy
+fi
+
+if [ "$FLG_INIT" = "TRUE" ]; then
+	initialize
+fi
+
+if [ "$FLG_CONF" = "TRUE" ]; then
+	configure
+fi
