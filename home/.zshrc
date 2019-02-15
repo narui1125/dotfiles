@@ -16,7 +16,7 @@ if [ -f ~/.fzf.zsh ]; then
 fi
 
 # tmux
-if [[ ! -n $TMUX && $- == *l* ]]; then
+if [[ -n "${SSH_CONNECTION}" && ! -n $TMUX && $- == *l* ]]; then
   # get the IDs
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
