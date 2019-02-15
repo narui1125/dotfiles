@@ -4,7 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 
 #
-brew "macvim"
+brew "vim"
 brew "tmux"
 brew "zsh"
 brew "fzf"
