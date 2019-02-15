@@ -10,6 +10,11 @@ if [ -f "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Powerline
+if type "powerline-daemon" > /dev/null 2>&1 ; then
+  powerline-daemon -q
+fi
+
 # fzf
 if [ -f ~/.fzf.zsh ]; then
    source ~/.fzf.zsh
