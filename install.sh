@@ -58,6 +58,7 @@ configure(){
 	# anyenv
 	anyenv install --init
 	anyenv install pyenv
+	anyenv install plenv
 
 	eval "$(anyenv init -)"
 
@@ -74,6 +75,14 @@ configure(){
 	pyenv global 3.7.2
 	pip install -U pip
 	pip install -r "${ETC_DIR}/requirements.txt"
+
+	# plenv
+	plenv install 5.10.0
+	plenv global 5.10.0
+
+	plenv install-cpanm
+
+	cpan local/lib.pm
 
 	if [ "$(uname)" == "Darwin" ]; then
 		# basictex
