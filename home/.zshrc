@@ -20,6 +20,16 @@ if [ -f ~/.fzf.zsh ]; then
    source ~/.fzf.zsh
 fi
 
+# OS毎の個別設定
+case ${OSTYPE} in
+  darwin*)
+    source "${HOME}/.zsh/.zshrc_darwin"
+    ;;
+  linux*)
+    source "${HOME}/.zsh/.zshrc_linux"
+    ;;
+esac
+
 # tmux
 if [[ -n "${SSH_CONNECTION}" && ! -n $TMUX && $- == *l* ]]; then
   # get the IDs
