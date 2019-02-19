@@ -80,8 +80,8 @@ configure(){
 	pip install --user powerline-status
 
 	# plenv
-	plenv install 5.10.0
-	plenv global 5.10.0
+	plenv install 5.28.0
+	plenv global 5.28.0
 
 	plenv install-cpanm
 
