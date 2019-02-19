@@ -83,10 +83,6 @@ configure(){
 	plenv install 5.28.0
 	plenv global 5.28.0
 
-	plenv install-cpanm
-
-	cpan local/lib.pm
-
 	if [ "$(uname)" == "Darwin" ]; then
 		# basictex
 		sudo tlmgr update --self --all
