@@ -55,6 +55,9 @@ initialize(){
 configure(){
 	printf "\e[1;34m=== Configure Applications ===\e[0m \n"
 
+	# zshrcコンパイル
+	zcompile ~/.zshrc
+
 	# anyenv
 	anyenv install --init
 	anyenv install pyenv
