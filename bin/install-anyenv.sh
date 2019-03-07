@@ -3,7 +3,7 @@
 anyenv_url="https://github.com/anyenv/anyenv"
 
 # インストール
-printf "\e[1;34mInstall boost\e[0m\n"
+printf "\e[1;34mInstall Anyenv\e[0m\n"
 
 if type "anyenv" > /dev/null 2>&1 ; then
   echo "Already installed Anyenv ✔︎"

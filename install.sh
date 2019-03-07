@@ -32,7 +32,7 @@ deploy(){
 	source "${BIN_DIR}/install-nerd-fonts.sh"
 }
 
-min-deploy(){
+min_deploy(){
 	printf "\e[1;34m=== Install min CUI Applications ===\e[0m \n"
 
 	source "${BIN_DIR}/install-anyenv.sh"
@@ -110,7 +110,7 @@ do
     "d" ) FLG_DEPLOY="TRUE" ;;
     "i" ) FLG_INIT="TRUE" ;;
     "c" ) FLG_CONF="TRUE" ;;
-		"m" ) FLG_MIN_DEP="TRUE" ;;
+    "l" ) FLG_MIN_DEP="TRUE" ;;
   esac
 done
 
@@ -118,14 +118,12 @@ if [ $# -e 0 ]; then
 	FLG_DEPLOY="TRUE"
 	FLG_INIT="TRUE"
 	FLG_CONF="TRUE"
+if [ "$FLG_MIN_DEP" = "TRUE" ]; then
+	min_deploy
 fi
 
 if [ "$FLG_DEPLOY" = "TRUE" ]; then
-	if [ "$FLG_MIN_DEP" = "TRUE" ]; then
-		min-deploy
-	else
-		deploy
-	fi
+	deploy
 fi
 
 if [ "$FLG_INIT" = "TRUE" ]; then
