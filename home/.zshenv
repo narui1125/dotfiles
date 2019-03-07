@@ -34,5 +34,7 @@ if [[ -z $TMUX ]]; then
   esac
 
   # Anyenv
-  eval "$(anyenv init -)"
+  if type "anyenv" > /dev/null 2>&1 ; then
+    eval "$(anyenv init -)"
+  fi
 fi

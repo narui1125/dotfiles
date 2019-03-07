@@ -35,8 +35,6 @@ deploy(){
 min_deploy(){
 	printf "\e[1;34m=== Install min CUI Applications ===\e[0m \n"
 
-	source "${BIN_DIR}/install-anyenv.sh"
-
 	source "${BIN_DIR}/install-prezto.sh"
 	source "${BIN_DIR}/install-nerd-fonts.sh"
 }
