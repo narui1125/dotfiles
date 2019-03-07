@@ -32,6 +32,15 @@ deploy(){
 	source "${BIN_DIR}/install-nerd-fonts.sh"
 }
 
+min-deploy(){
+	printf "\e[1;34m=== Install min CUI Applications ===\e[0m \n"
+
+	source "${BIN_DIR}/install-anyenv.sh"
+
+	source "${BIN_DIR}/install-prezto.sh"
+	source "${BIN_DIR}/install-nerd-fonts.sh"
+}
+
 # 設定ファイルの展開
 initialize(){
 	local DOTPATH="${HOME_DIR}"
@@ -101,6 +110,7 @@ do
     "d" ) FLG_DEPLOY="TRUE" ;;
     "i" ) FLG_INIT="TRUE" ;;
     "c" ) FLG_CONF="TRUE" ;;
+		"m" ) FLG_MIN_DEP="TRUE" ;;
   esac
 done
 
@@ -111,7 +121,11 @@ if [ $# -e 0 ]; then
 fi
 
 if [ "$FLG_DEPLOY" = "TRUE" ]; then
-	deploy
+	if [ "$FLG_MIN_DEP" = "TRUE" ]; then
+		min-deploy
+	else
+		deploy
+	fi
 fi
 
 if [ "$FLG_INIT" = "TRUE" ]; then
