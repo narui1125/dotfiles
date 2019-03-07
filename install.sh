@@ -118,6 +118,8 @@ if [ $# -e 0 ]; then
 	FLG_DEPLOY="TRUE"
 	FLG_INIT="TRUE"
 	FLG_CONF="TRUE"
+fi
+
 if [ "$FLG_MIN_DEP" = "TRUE" ]; then
 	min_deploy
 fi
