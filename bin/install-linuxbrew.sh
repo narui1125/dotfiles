@@ -12,5 +12,6 @@ else
   sh -c "$(curl -fsSL ${brew_sh})"
 
   # Path
-  eval $(~/.linuxbrew/bin/brew shellenv)
+  test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+  test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
