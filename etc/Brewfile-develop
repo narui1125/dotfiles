@@ -1,0 +1,18 @@
+#
+brew "vim"
+brew "tmux"
+brew "zsh"
+brew "fzf"
+
+#
+brew "boost"
+brew "cmake"
+
+#
+brew "anyenv"
+brew "autoconf"
+brew "pkg-config"
+
+# Python
+brew "libffi"
+brew "sqlite"

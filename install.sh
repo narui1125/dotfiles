@@ -19,21 +19,22 @@ deploy(){
 		exit 1
 	fi
 
-	printf "\e[1;34m=== Install CUI Applications ===\e[0m \n"
+	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
-	brew update
-	brew tap caskroom/cask
-
-	brew bundle --file="${ETC_DIR}/Brewfile"
+	if [ "$1" == "full" ]; then
+		brew update
+		brew bundle --file="${ETC_DIR}/Brewfile"
+	elif [ "$1" == "develop" ]; then
+		brew update
+		brew bundle --file="${ETC_DIR}/Brewfile-develop"
+	elif [ "$1" == "server" ]; then
+		brew update
+		brew bundle --file="${ETC_DIR}/Brewfile-server"
+	else
+		printf "\e[1;31m not brew \e[0m \n"
+	fi
 
 	printf "\e[1;34m=== Install non Package Manager Applications ===\e[0m \n"
-
-	source "${BIN_DIR}/install-prezto.sh"
-	source "${BIN_DIR}/install-nerd-fonts.sh"
-}
-
-min_deploy(){
-	printf "\e[1;34m=== Install min CUI Applications ===\e[0m \n"
 
 	source "${BIN_DIR}/install-prezto.sh"
 	source "${BIN_DIR}/install-nerd-fonts.sh"
@@ -63,38 +64,48 @@ configure(){
 	printf "\e[1;34m=== Configure Applications ===\e[0m \n"
 
 	# zshrcコンパイル
-	zcompile ~/.zshrc
+	if type "zcompile" > /dev/null 2>&1 ; then
+		zcompile ~/.zshrc
+	fi
 
 	# anyenv
-	anyenv install --init
-	anyenv install pyenv
-	anyenv install plenv
+	if type "anyenv" > /dev/null 2>&1 ; then
+		anyenv install --init
+		anyenv install pyenv
+		anyenv install plenv
 
-	eval "$(anyenv init -)"
+		eval "$(anyenv init -)"
+	fi
 
 	# pyenv
-	pyenv install 2.7.15
-	pyenv install 3.7.2
+	if type "pyenv" > /dev/null 2>&1 ; then
+		pyenv install 2.7.15
+		pyenv install 3.7.2
 
-	# pyton2
-	pyenv global 2.7.15
-	pip install -U pip
-	pip install -r "${ETC_DIR}/requirements.txt"
+		# pyton2
+		pyenv global 2.7.15
+		pip install -U pip
+		pip install -r "${ETC_DIR}/requirements.txt"
 
-	# pyton3
-	pyenv global 3.7.2
-	pip install -U pip
-	pip install -r "${ETC_DIR}/requirements.txt"
+		# pyton3
+		pyenv global 3.7.2
+		pip install -U pip
+		pip install -r "${ETC_DIR}/requirements.txt"
+	fi
 
 	# powerline-status
-	pip install --user powerline-status
+	if type "pip" > /dev/null 2>&1 ; then
+		pip install --user powerline-status
+	fi
 
 	# plenv
-	plenv install 5.28.0
-	plenv global 5.28.0
+	if type "plenv" > /dev/null 2>&1 ; then
+		plenv install 5.28.0
+		plenv global 5.28.0
+	fi
 
-	if [ "$(uname)" == "Darwin" ]; then
-		# basictex
+	# tex
+	if type "tlmgr" > /dev/null 2>&1 ; then
 		sudo tlmgr update --self --all
 		sudo tlmgr paper a4
 		sudo tlmgr install collection-langjapanese
@@ -105,31 +116,10 @@ configure(){
 while getopts dic OPT
 do
   case $OPT in
-    "d" ) FLG_DEPLOY="TRUE" ;;
-    "i" ) FLG_INIT="TRUE" ;;
-    "c" ) FLG_CONF="TRUE" ;;
-    "l" ) FLG_MIN_DEP="TRUE" ;;
+    "t" ) INSTALL_TYPE="$OPTARG" ;;
   esac
 done
 
-if [ $# -e 0 ]; then
-	FLG_DEPLOY="TRUE"
-	FLG_INIT="TRUE"
-	FLG_CONF="TRUE"
-fi
-
-if [ "$FLG_MIN_DEP" = "TRUE" ]; then
-	min_deploy
-fi
-
-if [ "$FLG_DEPLOY" = "TRUE" ]; then
-	deploy
-fi
-
-if [ "$FLG_INIT" = "TRUE" ]; then
-	initialize
-fi
-
-if [ "$FLG_CONF" = "TRUE" ]; then
-	configure
-fi
+deploy $INSTALL_TYPE
+initialize
+configure
