@@ -1,6 +1,6 @@
 
 # TSUBAME module
-. /etc/profile.d/modules.sh
+test -d /etc/profile.d/modules.sh && . /etc/profile.d/modules.sh
 
 # TSUBAME alias
 alias get_node="qrsh -l f_node=1 -l h_rt=0:10:00"
