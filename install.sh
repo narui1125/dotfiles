@@ -113,10 +113,14 @@ configure(){
 	fi
 }
 
+INSTALL_TYPE="full"
+
 while getopts dic OPT
 do
   case $OPT in
-    "t" ) INSTALL_TYPE="$OPTARG" ;;
+    "f" ) INSTALL_TYPE="full" ;;
+		"d" ) INSTALL_TYPE="develop" ;;
+		"s" ) INSTALL_TYPE="server" ;;
   esac
 done
 
