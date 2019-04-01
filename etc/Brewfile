@@ -9,6 +9,12 @@ brew "zsh"
 brew "fzf"
 brew "anyenv"
 
+# Pyenv deps
+brew "autoconf"
+brew "openssl"
+brew "pkg-config"
+brew "readline"
+
 #
 brew "exiftool"
 brew "hunspell"
