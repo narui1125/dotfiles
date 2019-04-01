@@ -52,6 +52,9 @@ deploy(){
 			source "${BIN_DIR}/tmux.sh"
 			install_tmux
 
+			source "${BIN_DIR}/fzf.sh"
+			install_fzf
+
 			source "${BIN_DIR}/anyenv.sh"
 			install_anyenv
 		fi
