@@ -25,8 +25,8 @@ configure_anyenv(){
 
     # Anyenv
     anyenv install --init
-		anyenv install pyenv
-		anyenv install plenv
+    anyenv install pyenv
+    anyenv install plenv
 
     # Pyenv
     if type "pyenv" > /dev/null 2>&1 ; then

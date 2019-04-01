@@ -109,34 +109,21 @@ configure(){
 }
 
 # rootチェック
-if [ ${EUID:-${UID}} = 0 ]; then
-	printf "You are root. install with package manager? [Y/n]"
-	read answer
-
-	case $answer in
-		[yY])
-			deploy "root"
-			initialize
-			configure
-			;;
-    *)
-			printf "cancelled."
-			;;
-	esac
-
-else
-	printf "You are not root. install without package manager? [Y/n]"
-	read answer
-
-	case $answer in
-		[yY])
-			deploy "non-root"
-			initialize
-			configure
-			;;
-    *)
-			printf "cancelled."
-			;;
-	esac
-
-fi
+printf "Do you have root password? [Y/n]"
+read answer
+case $answer in
+	[yY])
+		deploy "root"
+		initialize
+		configure
+		;;
+	[nN])
+		deploy "non-root"
+		initialize
+		configure
+		;;
+	
+    	*)
+		printf "cancelled."
+		;;
+esac
