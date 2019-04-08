@@ -9,9 +9,9 @@ install_ncurses(){
   else
     printf "\e[1;34mInstall ncurses\e[0m\n"
 
-    curl -o ncurses.tar.xz ${ncurses_url}
+    curl -o ncurses.tar.gz ${ncurses_url}
     mkdir ncurses-temp
-    tar xvf ncurses.tar.xz -C ncurses-temp --strip-components 1
+    tar xvf ncurses.tar.gz -C ncurses-temp --strip-components 1
 
     cd ncurses-temp
     ./configure --prefix=${HOME}/.local --disable-shared

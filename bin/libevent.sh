@@ -9,9 +9,9 @@ install_libevent(){
   else
     printf "\e[1;34mInstall libevent\e[0m\n"
 
-    curl -o libevent.tar.xz ${libevent_url}
+    curl -o libevent.tar.gz ${libevent_url}
     mkdir libevent-temp
-    tar xvf libevent.tar.xz -C libevent-temp --strip-components 1
+    tar xvf libevent.tar.gz -C libevent-temp --strip-components 1
 
     cd libevent-temp
     ./configure --prefix=${HOME}/.local --disable-shared
