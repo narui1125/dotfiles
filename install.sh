@@ -100,11 +100,13 @@ configure(){
 	configure_anyenv
 
 	# tex
-	if type "tlmgr" > /dev/null 2>&1 ; then
-		sudo tlmgr update --self --all
-		sudo tlmgr paper a4
-		sudo tlmgr install collection-langjapanese
-		sudo tlmgr install latexmk
+	if [ "$1" == "root" ]; then
+		if type "tlmgr" > /dev/null 2>&1 ; then
+			sudo tlmgr update --self --all
+			sudo tlmgr paper a4
+			sudo tlmgr install collection-langjapanese
+			sudo tlmgr install latexmk
+		fi
 	fi
 }
 
@@ -115,14 +117,14 @@ case $answer in
 	[yY])
 		deploy "root"
 		initialize
-		configure
+		configure "root"
 		;;
 	[nN])
 		deploy "non-root"
 		initialize
-		configure
+		configure "non-root"
 		;;
-	
+
     	*)
 		printf "cancelled."
 		;;
