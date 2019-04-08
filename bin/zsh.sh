@@ -9,9 +9,9 @@ install_zsh(){
   else
     printf "\e[1;34mInstall zsh\e[0m\n"
 
-    curl -o zsh.tar.gz ${zsh_url}
+    curl -oL zsh.tar.gz ${zsh_url}
     mkdir zsh-temp
-    tar xvf zsh.tar.gz -C zsh-temp --strip-components 1
+    tar -xvf zsh.tar.gz -C zsh-temp --strip-components 1
 
     cd zsh-temp
     ./configure --prefix=${HOME}/.local --disable-shared

@@ -16,9 +16,9 @@ install_tmux(){
     source ${BIN_DIR}/ncurses.sh
     install_ncurses
 
-    curl -o tmux.tar.gz ${tmux_url}
+    curl -oL tmux.tar.gz ${tmux_url}
     mkdir tmux-temp
-    tar xvf tmux.tar.gz -C tmux-temp --strip-components 1
+    tar -xvf tmux.tar.gz -C tmux-temp --strip-components 1
 
     cd tmux-temp
     ./configure --prefix=${HOME}/.local --disable-shared
