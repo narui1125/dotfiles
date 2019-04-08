@@ -9,7 +9,7 @@ install_ncurses(){
   else
     printf "\e[1;34mInstall ncurses\e[0m\n"
 
-    curl -oL ncurses.tar.gz ${ncurses_url}
+    curl -L -o ncurses.tar.gz ${ncurses_url}
     mkdir ncurses-temp
     tar -xvf ncurses.tar.gz -C ncurses-temp --strip-components 1
 
@@ -20,7 +20,8 @@ install_ncurses(){
     make install
 
     cd ..
-    rm -rf ncurses
+    rm -rf ncurses-temp
+    rm -rf ncurses.tar.gz
   fi
 }
 
