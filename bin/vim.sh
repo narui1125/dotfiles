@@ -6,7 +6,7 @@ vim_url="https://github.com/vim/vim.git"
 install_vim(){
   printf "\e[1;34mInstall vim\e[0m\n"
 
-  git clone https://github.com/vim/vim.git vim-tmp
+  git clone ${vim_url} vim-tmp
 
   cd vim-tmp
   ./configure --prefix=${HOME}/.local --with-features=huge --enable-perlinterp --enable-pythoninterp --enable-python3interp --enable-rubyinterp --enable-luainterp --enable-fail-if-missing
