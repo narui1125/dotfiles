@@ -27,34 +27,44 @@ configure_anyenv(){
 
     # Anyenv
     anyenv install --init
-    anyenv install pyenv
-    anyenv install plenv
 
-    # Pyenv
     if type "pyenv" > /dev/null 2>&1 ; then
-  		pyenv install 2.7.15
-  		pyenv install 3.7.2
+      echo "Already installed pyenv ✔︎"
+    else
+      anyenv install pyenv
 
-  		# pyton2
-  		pyenv global 2.7.15
-  		pip install -U pip
-  		pip install -r "${ETC_DIR}/requirements.txt"
+      # Pyenv
+      if type "pyenv" > /dev/null 2>&1 ; then
+    		pyenv install 2.7.15
+    		pyenv install 3.7.2
 
-  		# pyton3
-  		pyenv global 3.7.2
-  		pip install -U pip
-  		pip install -r "${ETC_DIR}/requirements.txt"
+    		# pyton2
+    		pyenv global 2.7.15
+    		pip install -U pip
+    		pip install -r "${ETC_DIR}/requirements.txt"
 
-      # powerline-status
-    	if type "pip" > /dev/null 2>&1 ; then
-    		pip install --user powerline-status
+    		# pyton3
+    		pyenv global 3.7.2
+    		pip install -U pip
+    		pip install -r "${ETC_DIR}/requirements.txt"
+
+        # powerline-status
+      	if type "pip" > /dev/null 2>&1 ; then
+      		pip install --user powerline-status
+      	fi
     	fi
-  	fi
+    fi
 
-    # Plenv
     if type "plenv" > /dev/null 2>&1 ; then
-      plenv install 5.28.0
-      plenv global 5.28.0
+      echo "Already installed plenv ✔︎"
+    else
+      anyenv install plenv
+
+      # Plenv
+      if type "plenv" > /dev/null 2>&1 ; then
+        plenv install 5.28.0
+        plenv global 5.28.0
+      fi
     fi
 
   else
