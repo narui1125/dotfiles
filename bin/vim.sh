@@ -14,7 +14,7 @@ install_vim(){
   make
   make install
 
-  cd ../..
+  cd ..
   rm -rf vim-tmps
 }
 
