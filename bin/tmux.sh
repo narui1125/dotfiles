@@ -11,10 +11,10 @@ install_tmux(){
 
     # 依存
     source ${BIN_DIR}/libevent.sh
-    install-libevent
+    install_libevent
 
     source ${BIN_DIR}/ncurses.sh
-    install-ncurses
+    install_ncurses
 
     curl -o tmux.tar.xz ${tmux_url}
     mkdir tmux-temp
