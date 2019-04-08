@@ -4,22 +4,18 @@ vim_url="https://github.com/vim/vim.git"
 
 # インストール
 install_vim(){
-  if type "vim" > /dev/null 2>&1 ; then
-    echo "Already installed vim ✔︎"
-  else
-    printf "\e[1;34mInstall vim\e[0m\n"
+  printf "\e[1;34mInstall vim\e[0m\n"
 
-    git clone https://github.com/vim/vim.git vim-tmp
+  git clone https://github.com/vim/vim.git vim-tmp
 
-    cd vim-tmp
-    ./configure --prefix=${HOME}/.local --with-features=huge --enable-perlinterp --enable-pythoninterp --enable-python3interp --enable-rubyinterp --enable-luainterp --enable-fail-if-missing
+  cd vim-tmp
+  ./configure --prefix=${HOME}/.local --with-features=huge --enable-perlinterp --enable-pythoninterp --enable-python3interp --enable-rubyinterp --enable-luainterp --enable-fail-if-missing
 
-    make
-    make install
+  make
+  make install
 
-    cd ../..
-    rm -rf vim-tmp
-  fi
+  cd ../..
+  rm -rf vim-tmps
 }
 
 # 設定

@@ -47,12 +47,12 @@ configure_anyenv(){
     		pyenv global 3.7.2
     		pip install -U pip
     		pip install -r "${ETC_DIR}/requirements.txt"
-
-        # powerline-status
-      	if type "pip" > /dev/null 2>&1 ; then
-      		pip install --user powerline-status
-      	fi
     	fi
+    fi
+
+    # powerline-status
+    if type "pip" > /dev/null 2>&1 ; then
+      pip3 install --user powerline-status
     fi
 
     if type "plenv" > /dev/null 2>&1 ; then
