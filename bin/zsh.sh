@@ -9,7 +9,7 @@ install_zsh(){
   else
     printf "\e[1;34mInstall zsh\e[0m\n"
 
-    wget ${zsh_url} -O zsh.tar.xz
+    curl -o zsh.tar.xz ${zsh_url}
     mkdir zsh-temp
     tar xvf zsh.tar.xz -C zsh-temp --strip-components 1
 

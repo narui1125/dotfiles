@@ -9,7 +9,7 @@ install_libevent(){
   else
     printf "\e[1;34mInstall libevent\e[0m\n"
 
-    wget ${libevent_url} -O libevent.tar.xz
+    curl -o libevent.tar.xz ${libevent_url}
     mkdir libevent-temp
     tar xvf libevent.tar.xz -C libevent-temp --strip-components 1
 

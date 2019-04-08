@@ -9,7 +9,7 @@ install_ncurses(){
   else
     printf "\e[1;34mInstall ncurses\e[0m\n"
 
-    wget ${ncurses_url} -O ncurses.tar.xz
+    curl -o ncurses.tar.xz ${ncurses_url}
     mkdir ncurses-temp
     tar xvf ncurses.tar.xz -C ncurses-temp --strip-components 1
 

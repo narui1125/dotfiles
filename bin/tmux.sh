@@ -16,7 +16,7 @@ install_tmux(){
     source ${BIN_DIR}/ncurses.sh
     install-ncurses
 
-    wget ${tmux_url} -O tmux.tar.xz
+    curl -o tmux.tar.xz ${tmux_url}
     mkdir tmux-temp
     tar xvf tmux.tar.xz -C tmux-temp --strip-components 1
 
