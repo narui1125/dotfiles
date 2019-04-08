@@ -11,13 +11,15 @@ install_anyenv(){
 
     git clone ${anyenv_url} ~/.anyenv
 
-    eval "$($HOME/.anyenv/bin/anyenv init -)"
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
   fi
 }
 
 # 設定
 configure_anyenv(){
   # PATH
+  export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init -)"
 
   if type "anyenv" > /dev/null 2>&1 ; then
