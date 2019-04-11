@@ -15,7 +15,7 @@ install_vim(){
   make install
 
   cd ..
-  rm -rf vim-tmps
+  rm -rf vim-tmp
 }
 
 # 設定
