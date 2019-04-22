@@ -45,6 +45,10 @@ deploy(){
 					stable"
 				sudo apt-get update
 				sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+				# docker-compose
+				source "${BIN_DIR}/docker.sh"
+				install_docker_compose
 			
 			elif type "yum" > /dev/null 2>&1 ; then
 				printf "install with YUM package manager.\n"
@@ -65,6 +69,10 @@ deploy(){
 					https://download.docker.com/linux/centos/docker-ce.repo
 				sudo yum install docker-ce docker-ce-cli containerd.io
 				sudo systemctl start docker
+
+				# docker-compose
+				source "${BIN_DIR}/docker.sh"
+				install_docker_compose
 			
 			else
 				printf "install with LINUXBREW package manager.\n"
