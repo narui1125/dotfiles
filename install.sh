@@ -25,7 +25,11 @@ deploy(){
 				printf "install with APT package manager.\n"
 				
 				sudo apt update
-				sudo apt install -y vim tmux zsh fzf
+				sudo apt install -y vim tmux zsh
+
+				# fzf
+				source "${BIN_DIR}/fzf.sh"
+				install_fzf
 
 				# docker
 				sudo apt-get install \
@@ -46,7 +50,11 @@ deploy(){
 				printf "install with YUM package manager.\n"
 				
 				sudo yum update
-				sudo yum install -y vim tmux zsh fzf
+				sudo yum install -y vim tmux zsh
+
+				# fzf
+				source "${BIN_DIR}/fzf.sh"
+				install_fzf
 
 				# docker 
 				sudo yum install -y yum-utils \
