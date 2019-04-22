@@ -19,14 +19,54 @@ deploy(){
 
 			brew update
 			brew bundle --file="${ETC_DIR}/Brewfile"
+		
 		elif [ "$(uname)" == "Linux" ]; then
-			printf "install with LINUXBREW package manager.\n"
+			if type "apt" > /dev/null 2>&1 ; then
+				printf "install with APT package manager.\n"
+				
+				sudo apt update
+				sudo apt install -y vim tmux zsh fzf
 
-			source "${BIN_DIR}/linuxbrew.sh"
-			install_linuxbrew
+				# docker
+				sudo apt-get install \
+					apt-transport-https \
+					ca-certificates \
+					curl \
+					gnupg-agent \
+					software-properties-common
+				curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+				sudo add-apt-repository \
+					"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+					$(lsb_release -cs) \
+					stable"
+				sudo apt-get update
+				sudo apt-get install docker-ce docker-ce-cli containerd.io
+			
+			elif type "yum" > /dev/null 2>&1 ; then
+				printf "install with YUM package manager.\n"
+				
+				sudo yum update
+				sudo yum install -y vim tmux zsh fzf
 
-			brew update
-			brew bundle --file="${ETC_DIR}/Brewfile"
+				# docker 
+				sudo yum install -y yum-utils \
+					device-mapper-persistent-data \
+					lvm2
+				sudo yum-config-manager \
+					--add-repo \
+					https://download.docker.com/linux/centos/docker-ce.repo
+				sudo yum install docker-ce docker-ce-cli containerd.io
+				sudo systemctl start docker
+			
+			else
+				printf "install with LINUXBREW package manager.\n"
+
+				source "${BIN_DIR}/linuxbrew.sh"
+				install_linuxbrew
+
+				brew update
+				brew bundle --file="${ETC_DIR}/Brewfile"
+			fi
 		else
 			printf "\e[1;31m not support \e[0m \n"
 			exit 1
