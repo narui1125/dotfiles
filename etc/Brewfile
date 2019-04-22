@@ -9,10 +9,6 @@ brew "zsh"
 brew "fzf"
 
 #
-brew "exiftool"
-brew "hunspell"
-
-#
 cask "visual-studio-code"
 cask "clion"
 cask "pycharm"
