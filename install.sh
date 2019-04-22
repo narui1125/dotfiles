@@ -75,13 +75,8 @@ deploy(){
 				install_docker_compose
 			
 			else
-				printf "install with LINUXBREW package manager.\n"
-
-				source "${BIN_DIR}/linuxbrew.sh"
-				install_linuxbrew
-
-				brew update
-				brew bundle --file="${ETC_DIR}/Brewfile"
+				printf "\e[1;31m not support \e[0m \n"
+				exit 1
 			fi
 		else
 			printf "\e[1;31m not support \e[0m \n"
