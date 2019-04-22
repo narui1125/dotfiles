@@ -54,9 +54,6 @@ deploy(){
 
 			source "${BIN_DIR}/fzf.sh"
 			install_fzf
-
-			source "${BIN_DIR}/anyenv.sh"
-			install_anyenv
 		fi
 	fi
 
@@ -93,20 +90,6 @@ configure(){
 	# zshrcコンパイル
 	if type "zcompile" > /dev/null 2>&1 ; then
 		zcompile ~/.zshrc
-	fi
-
-	# anyenv
-	source "${BIN_DIR}/anyenv.sh"
-	configure_anyenv
-
-	# tex
-	if [ "$1" == "root" ]; then
-		if type "tlmgr" > /dev/null 2>&1 ; then
-			sudo tlmgr update --self --all
-			sudo tlmgr paper a4
-			sudo tlmgr install collection-langjapanese
-			sudo tlmgr install latexmk
-		fi
 	fi
 }
 
