@@ -13,7 +13,6 @@ brew "exiftool"
 brew "hunspell"
 
 #
-cask "atom"
 cask "visual-studio-code"
 cask "clion"
 cask "pycharm"
