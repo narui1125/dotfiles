@@ -4,8 +4,8 @@ vim_url="https://github.com/vim/vim.git"
 
 # インストール
 install_vim(){
-  if type "tmux" > /dev/null 2>&1 ; then
-    echo "Already installed tmux ✔︎"
+  if type "vim" > /dev/null 2>&1 ; then
+    echo "Already installed vim ✔︎"
   else
     printf "\e[1;34mInstall vim\e[0m\n"
 
