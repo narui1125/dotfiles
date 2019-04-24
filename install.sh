@@ -31,24 +31,34 @@ deploy(){
 				source "${BIN_DIR}/fzf.sh"
 				install_fzf
 
-				# docker
-				sudo apt-get install \
-					apt-transport-https \
-					ca-certificates \
-					curl \
-					gnupg-agent \
-					software-properties-common
-				curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-				sudo add-apt-repository \
-					"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-					$(lsb_release -cs) \
-					stable"
-				sudo apt-get update
-				sudo apt-get install docker-ce docker-ce-cli containerd.io
+				printf "Do you install docker? [Y/n]"
+				read answer
+				case $answer in
+					[yY])
+						printf "install docker"
 
-				# docker-compose
-				source "${BIN_DIR}/docker.sh"
-				install_docker_compose
+						# docker 
+						sudo yum install -y yum-utils \
+							device-mapper-persistent-data \
+							lvm2
+						sudo yum-config-manager \
+							--add-repo \
+							https://download.docker.com/linux/centos/docker-ce.repo
+						sudo yum install docker-ce docker-ce-cli containerd.io
+						sudo systemctl start docker
+
+						# docker-compose
+						source "${BIN_DIR}/docker.sh"
+						install_docker_compose
+						;;
+					[nN])
+						printf "not install docker"
+						;;
+
+					*)
+						printf "cancelled."
+						;;
+				esac
 			
 			elif type "yum" > /dev/null 2>&1 ; then
 				printf "install with YUM package manager.\n"
@@ -60,20 +70,34 @@ deploy(){
 				source "${BIN_DIR}/fzf.sh"
 				install_fzf
 
-				# docker 
-				sudo yum install -y yum-utils \
-					device-mapper-persistent-data \
-					lvm2
-				sudo yum-config-manager \
-					--add-repo \
-					https://download.docker.com/linux/centos/docker-ce.repo
-				sudo yum install docker-ce docker-ce-cli containerd.io
-				sudo systemctl start docker
+				printf "Do you install docker? [Y/n]"
+				read answer
+				case $answer in
+					[yY])
+						printf "install docker"
 
-				# docker-compose
-				source "${BIN_DIR}/docker.sh"
-				install_docker_compose
-			
+						# docker 
+						sudo yum install -y yum-utils \
+							device-mapper-persistent-data \
+							lvm2
+						sudo yum-config-manager \
+							--add-repo \
+							https://download.docker.com/linux/centos/docker-ce.repo
+						sudo yum install docker-ce docker-ce-cli containerd.io
+						sudo systemctl start docker
+
+						# docker-compose
+						source "${BIN_DIR}/docker.sh"
+						install_docker_compose
+						;;
+					[nN])
+						printf "not install docker"
+						;;
+
+					*)
+						printf "cancelled."
+						;;
+				esac
 			else
 				printf "\e[1;31m not support \e[0m \n"
 				exit 1
