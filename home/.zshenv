@@ -21,8 +21,6 @@ if [[ -z $TMUX ]]; then
   export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
   export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
-  export PYTHONPATH="${HOME}/.local/lib/python3.7/site-packages:$PYTHONPATH"
-
   # OS毎の個別設定
   case ${OSTYPE} in
     darwin*)
@@ -32,9 +30,4 @@ if [[ -z $TMUX ]]; then
       source "${HOME}/.zsh/.zshenv_linux"
       ;;
   esac
-
-  # Anyenv
-  if type "anyenv" > /dev/null 2>&1 ; then
-    eval "$(anyenv init -)"
-  fi
 fi
