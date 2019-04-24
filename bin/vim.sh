@@ -4,18 +4,22 @@ vim_url="https://github.com/vim/vim.git"
 
 # インストール
 install_vim(){
-  printf "\e[1;34mInstall vim\e[0m\n"
+  if type "tmux" > /dev/null 2>&1 ; then
+    echo "Already installed tmux ✔︎"
+  else
+    printf "\e[1;34mInstall vim\e[0m\n"
 
-  git clone ${vim_url} vim-tmp
+    git clone ${vim_url} vim-tmp
 
-  cd vim-tmp
-  ./configure --prefix=${HOME}/.local --with-features=huge --enable-perlinterp --enable-pythoninterp --enable-python3interp --enable-rubyinterp --enable-luainterp --enable-fail-if-missing
+    cd vim-tmp
+    ./configure --prefix=${HOME}/.local --with-features=huge --enable-perlinterp --enable-pythoninterp --enable-python3interp --enable-rubyinterp --enable-luainterp --enable-fail-if-missing
 
-  make
-  make install
+    make
+    make install
 
-  cd ..
-  rm -rf vim-tmp
+    cd ..
+    rm -rf vim-tmp
+  fi
 }
 
 # 設定
