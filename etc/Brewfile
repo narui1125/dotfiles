@@ -2,23 +2,26 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 
-#
-brew "vim"
-brew "tmux"
-brew "zsh"
-brew "fzf"
+brew "exiftool"
 
-#
-cask "visual-studio-code"
+brew "fzf"
+brew "tmux"
+brew "vim"
+brew "zsh"
+
 cask "clion"
 cask "pycharm"
+cask "visual-studio-code"
 
-#
-cask "authy"
-cask "docker"
 cask "github"
+cask "docker"
+cask "google-cloud-sdk"
+cask "transmit"
+
+cask "adobe-acrobat-reader"
+cask "authy"
+cask "google-chrome"
 cask "iterm2"
 cask "mactex"
 cask "mendeley"
 cask "slack"
-cask "transmit"
