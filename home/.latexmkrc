@@ -9,3 +9,5 @@ $lualatex         = 'lualatex -synctex=1 -interaction=nonstopmode %O %S';
 $bibtex           = 'upbibtex %O %B';
 $dvipdf           = 'dvipdfmx %O -o %D %S';
 $makeindex        = 'mendex %O -o %D %S';
+
+$out_dir = 'build';
