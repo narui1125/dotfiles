@@ -156,7 +156,7 @@ initialize(){
 		[[ "$f" == ".git" ]] && continue
 		[[ "$f" == ".DS_Store" ]] && continue
 
-		ln -snf "${DOTPATH}/$f" "${HOME}/$f"
+		ln -snf "${DOTPATH}/$f" "${HOME}"
 		if [ $? -eq 0 ]; then
 			printf "%-25s -> %s\n" "${DOTPATH}/$f" "${HOME}/$f"
 		fi
