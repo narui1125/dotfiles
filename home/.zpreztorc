@@ -154,7 +154,7 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{240}\uF460%F{245}\uF460%F{250}\uF4
 # Load Nerd Fonts with Powerlevel9k theme for Zsh
 POWERLEVEL9K_MODE='nerdfont-complete'
 
-zstyle ':prezto:module:prompt' theme 'powerlevel9k'
+zstyle :prezto:module:prompt theme powerlevel10k
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
