@@ -46,17 +46,15 @@ download(){
 
 # 設定ファイルの展開
 deploy(){
-	local DOTPATH="${HOME_DIR}"
-
 	printf "\e[1;34m=== Create dotfile symbolic links ===\e[0m \n"
 
-	cd ${DOTPATH}
-	for f in .??*
+	for f in ${DOTFILES_DIR}/home/.??*
 	do
 		[[ "$f" == ".git" ]] && continue
 		[[ "$f" == ".DS_Store" ]] && continue
+		[[ "$f" == ".dotfiles" ]] && continue
 
-		ln -snf "${DOTPATH}/$f" "${HOME}"
+		ln -snf "${DOTFILES_DIR}/home/$f" "${HOME}"
 		if [ $? -eq 0 ]; then
 			printf "%-25s -> %s\n" "${DOTPATH}/$f" "${HOME}/$f"
 		fi
