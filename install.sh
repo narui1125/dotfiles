@@ -6,9 +6,9 @@ DOTFILES_DIR="${HOME}/.dotfiles"
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 
-HOME_DIR="${SCRIPT_DIR}/home"
-BIN_DIR="${SCRIPT_DIR}/bin"
-ETC_DIR="${SCRIPT_DIR}/etc"
+HOME_DIR="${DOTFILES_DIR}/home"
+BIN_DIR="${DOTFILES_DIR}/bin"
+ETC_DIR="${DOTFILES_DIR}/etc"
 
 # ダウンロード
 download(){
