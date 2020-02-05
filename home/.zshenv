@@ -1,10 +1,9 @@
 # .zshenv
 
 # locale
-export LANG="ja_JP.UTF-8"
-export LC_CTYPE="ja_JP.UTF-8"
-export LC_ALL="ja_JP.UTF-8"
-
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # PATH
 if [[ -z $TMUX ]]; then
