@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_REPOSITORY="https://github.com/narui1125/dotfiles.git"
+DOTFILES_REPOSITORY="git@github.com:narui1125/dotfiles"
 DOTFILES_ARCHIVE="https://github.com/narui1125/dotfiles/archive/master.tar.gz"
 DOTFILES_DIR="${HOME}/.dotfiles"
 
