@@ -12,6 +12,8 @@ ETC_DIR="${SCRIPT_DIR}/etc"
 
 # ダウンロード
 download(){
+	printf "\e[1;34m=== Download dotfiles ===\e[0m \n"
+	
 	if [ -d "${DOTFILES_DIR}" ]; then
         printf "${DOTFILES_DIR} already exists"
         exit 1
