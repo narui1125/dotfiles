@@ -4,5 +4,5 @@
 ## usage
 
 ```
-$ sh install.sh
+$ bash -c "$(curl -L raw.githubusercontent.com/narui1125/dotfiles/master/install.sh)"
 ```
