@@ -1,2 +1,0 @@
-# TSUBAME module
-test -d /etc/profile.d/modules.sh && . /etc/profile.d/modules.sh

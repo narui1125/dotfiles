@@ -21,7 +21,7 @@ zstyle ':prezto:load' pmodule \
 # ===== Prompt =====
 
 # Set the prompt theme to load.
-zstyle ':prezto:module:prompt' theme 'powerlevel10k'
+zstyle ':prezto:module:prompt' theme 'pure'
 
 
 # ===== Tmux =====

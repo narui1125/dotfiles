@@ -1,11 +1,10 @@
 
-# linuxbrew
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [[ -z $TMUX ]]; then
+    # linuxbrew
+    test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+    test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
-export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$CPLUS_INCLUDE_PATH"
-export LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LIBRARY_PATH"
-
-# TSUBAME module
-export MODULEPATH=/gs/hs0/tga-ishidalab/share/modulefiles:$MODULEPATH
+    export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
+    export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$CPLUS_INCLUDE_PATH"
+    export LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LIBRARY_PATH"
+fi
