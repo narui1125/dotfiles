@@ -9,6 +9,9 @@ brew "tmux"
 brew "vim"
 brew "zsh"
 
+brew "bat"
+brew "exa"
+
 cask "visual-studio-code"
 cask "iterm2"
 
