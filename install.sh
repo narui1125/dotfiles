@@ -105,6 +105,9 @@ initialize(){
 
 	# パッケージマネージャ非対応ソフトのインストール
 	source "${BIN_DIR}/prezto.sh" && install_prezto
+
+	# 設定
+	git config --global core.excludesfile ~/.gitignore_global
 }
 
 # main
