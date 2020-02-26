@@ -16,7 +16,7 @@ download(){
 	
 	if [ -d "${DOTFILES_DIR}" ]; then
         printf "${DOTFILES_DIR} already exists"
-        exit 1
+        return
     fi
 
 	if type "git" > /dev/null 2>&1 ; then
