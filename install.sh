@@ -105,7 +105,6 @@ initialize(){
 
 	# パッケージマネージャ非対応ソフトのインストール
 	source "${BIN_DIR}/prezto.sh" && install_prezto
-	source "${BIN_DIR}/nerd-fonts.sh" && install_nerdfonts
 }
 
 # main
