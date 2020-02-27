@@ -20,6 +20,9 @@ cask "docker"
 cask "google-cloud-sdk"
 cask "transmit"
 cask "mactex"
+
+brew "gpg"
+brew "opensc"
 brew "ykman"
 
 cask "adobe-acrobat-reader"
