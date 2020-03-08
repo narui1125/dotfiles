@@ -4,7 +4,6 @@ tap "homebrew/core"
 
 brew "exiftool"
 
-brew "fzf"
 brew "tmux"
 brew "vim"
 brew "zsh"
@@ -17,9 +16,7 @@ cask "iterm2"
 
 cask "github"
 cask "docker"
-cask "google-cloud-sdk"
 cask "transmit"
-cask "mactex"
 
 brew "gpg"
 brew "opensc"
