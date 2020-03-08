@@ -19,6 +19,10 @@ download(){
         return
     fi
 
+	if [[ "${OSTYPE}" == "darwin" ]]; then
+		xcode-select --install
+	fi
+
 	if type "git" > /dev/null 2>&1 ; then
 		printf "download with git"
 		git clone --recursive "${DOTFILES_REPOSITORY}" "${DOTFILES_DIR}"
