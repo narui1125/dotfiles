@@ -19,7 +19,7 @@ download(){
         return
     fi
 
-	if [[ "${OSTYPE}" == "darwin" ]]; then
+	if [ "$(uname)" == "Darwin" ]; then
 		xcode-select --install
 	fi
 
@@ -114,7 +114,7 @@ initialize(){
 	git config --global core.excludesfile ~/.gitignore_global
 
 	mkdir ~/.gnupg && touch ~/.gnupg/gpg-agent.conf
-	cat enable-ssh-support >> ~/.gnupg/gpg-agent.conf
+	echo "enable-ssh-support" >> ~/.gnupg/gpg-agent.conf
 }
 
 # main
