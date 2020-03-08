@@ -8,6 +8,7 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 zstyle ':prezto:load' pmodule \
   'environment' \
+  'gpg' \
   'git' \
   'history' \
   'syntax-highlighting' \
