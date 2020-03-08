@@ -19,7 +19,6 @@ cask "docker"
 cask "transmit"
 
 brew "gpg"
-brew "opensc"
 brew "ykman"
 
 cask "adobe-acrobat-reader"
