@@ -5,8 +5,6 @@ tap "homebrew/core"
 brew "exiftool"
 
 brew "tmux"
-brew "vim"
-brew "zsh"
 
 brew "gpg"
 brew "ykman"

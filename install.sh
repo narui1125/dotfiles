@@ -81,8 +81,6 @@ initialize_linux(){
 
 initialize_manual(){
 	# Manual install
-	source "${BIN_DIR}/zsh.sh" && install_zsh
-	source "${BIN_DIR}/vim.sh" && install_vim
 	source "${BIN_DIR}/tmux.sh" && install_tmux
 }
 
