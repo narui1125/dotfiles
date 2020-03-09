@@ -84,7 +84,6 @@ initialize_manual(){
 	source "${BIN_DIR}/zsh.sh" && install_zsh
 	source "${BIN_DIR}/vim.sh" && install_vim
 	source "${BIN_DIR}/tmux.sh" && install_tmux
-	source "${BIN_DIR}/fzf.sh" && install_fzf
 }
 
 initialize(){

@@ -9,13 +9,13 @@ zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:load' pmodule \
   'environment' \
   'git' \
-  'gpg' \
   'history' \
   'syntax-highlighting' \
   'autosuggestions' \
   'utility' \
   'completion' \
   'prompt' \
+  'gpg' \
   'tmux'
 
 

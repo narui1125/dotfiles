@@ -8,6 +8,9 @@ brew "tmux"
 brew "vim"
 brew "zsh"
 
+brew "gpg"
+brew "ykman"
+
 brew "bat"
 brew "exa"
 
@@ -17,9 +20,6 @@ cask "iterm2"
 cask "github"
 cask "docker"
 cask "transmit"
-
-brew "gpg"
-brew "ykman"
 
 cask "adobe-acrobat-reader"
 cask "authy"
