@@ -3,18 +3,16 @@ tap "homebrew/cask"
 tap "homebrew/core"
 
 brew "exiftool"
-
-brew "tmux"
-
-brew "gpg"
 brew "ykman"
 
+brew "tmux"
 brew "bat"
 brew "exa"
 
 cask "visual-studio-code"
 cask "iterm2"
 
+cask "gpg-suite-no-mail"
 cask "oracle-jdk"
 
 cask "github"
