@@ -11,16 +11,14 @@ brew "exa"
 
 cask "visual-studio-code"
 cask "iterm2"
-
 cask "gpg-suite-no-mail"
-cask "oracle-jdk"
 
 cask "github"
 cask "docker"
 cask "transmit"
 
 cask "postman"
-cask "dbeaver-community"
+cask "tableplus"
 
 cask "adobe-acrobat-reader"
 cask "authy"
