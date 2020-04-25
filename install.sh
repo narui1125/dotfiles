@@ -109,9 +109,6 @@ initialize(){
 
 	# 設定
 	git config --global core.excludesfile ~/.gitignore_global
-
-	mkdir ~/.gnupg && touch ~/.gnupg/gpg-agent.conf
-	echo "enable-ssh-support" >> ~/.gnupg/gpg-agent.conf
 }
 
 # main
