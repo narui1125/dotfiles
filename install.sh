@@ -55,6 +55,7 @@ deploy(){
 	cd ${HOME_DIR}
 	for f in .??*
 	do
+		[[ "$f" == ".config" ]] && continue
 		[[ "$f" == ".git" ]] && continue
 		[[ "$f" == ".DS_Store" ]] && continue
 		[[ "$f" == ".dotfiles" ]] && continue
@@ -62,6 +63,20 @@ deploy(){
 		ln -snf "${HOME_DIR}/$f" "${HOME}/$f"
 		if [ $? -eq 0 ]; then
 			printf "%-25s -> %s\n" "${HOME_DIR}/$f" "${HOME}/$f"
+		fi
+	done
+
+	# .config
+	mkdir ${HOME}/.config
+	
+	cd ${HOME_DIR}/.config
+	for f in ??*
+	do
+		[[ "$f" == ".DS_Store" ]] && continue
+
+		ln -snf "${HOME_DIR}/.config/$f" "${HOME}/.config/$f"
+		if [ $? -eq 0 ]; then
+			printf "%-25s -> %s\n" "${HOME_DIR}/.config/$f" "${HOME}/.config/$f"
 		fi
 	done
 }
