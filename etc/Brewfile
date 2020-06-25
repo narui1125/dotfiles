@@ -3,7 +3,6 @@ tap "homebrew/cask"
 tap "homebrew/core"
 
 brew "exiftool"
-brew "ykman"
 
 brew "tmux"
 brew "bat"
@@ -11,7 +10,6 @@ brew "exa"
 
 cask "visual-studio-code"
 cask "iterm2"
-cask "gpg-suite-no-mail"
 
 cask "github"
 cask "docker"
