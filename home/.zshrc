@@ -19,3 +19,8 @@ case ${OSTYPE} in
     source "${HOME}/.zsh/.zshrc_linux"
     ;;
 esac
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

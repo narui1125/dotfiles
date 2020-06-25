@@ -18,10 +18,6 @@ if [[ -z $TMUX ]]; then
   export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 fi
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init -)"
-
 # OS毎の個別設定
   case ${OSTYPE} in
     darwin*)
