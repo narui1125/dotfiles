@@ -10,3 +10,5 @@ colorscheme hybrid
 syntax enable
 set number
 set laststatus=2
+
+set backspace=indent,eol,start
