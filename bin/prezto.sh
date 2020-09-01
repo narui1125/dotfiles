@@ -10,9 +10,6 @@ install_prezto(){
     printf "\e[1;34mInstall prezto\e[0m\n"
 
     git clone --recursive ${prezto_url} "${ZDOTDIR:-$HOME}/.zprezto"
-
-    # 外部モジュール
-    git clone https://github.com/Aloxaf/fzf-tab ${ZPREZTODIR}/contrib/fzf-tab
   fi
 }
 
