@@ -46,6 +46,7 @@ zinit light sindresorhus/pure
 # Programs
 zinit silent wait light-mode from:gh-r as:program for \
     mv:"bat* -> bat" sharkdp/bat \
+    mv:"fd* -> fd" sharkdp/fd \
     mv:"exa* -> exa" ogham/exa \
     junegunn/fzf-bin
 
@@ -55,6 +56,12 @@ zinit silent wait light-mode for \
     atload:"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
     atpull:"zinit creinstall -q ." blockf zsh-users/zsh-completions \
     zdharma/history-search-multi-word
+
+zinit ice as:"completion"
+zinit snippet https://raw.githubusercontent.com/docker/machine/master/contrib/completion/zsh/_docker-machine
+
+zinit ice as:"completion"
+zinit snippet https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/zsh/_docker-compose
 
 
 # ===== Other =====
