@@ -60,8 +60,11 @@ zinit silent wait light-mode from:gh-r as:"program" for \
 zinit silent wait light-mode for \
     atinit:"zicompinit; zicdreplay" zsh-users/zsh-syntax-highlighting \
     atload:"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-    atpull:"zinit creinstall -q ." blockf zsh-users/zsh-completions \
-    zdharma/history-search-multi-word
+    atpull:"zinit creinstall -q ." blockf zsh-users/zsh-completions
+
+zinit silent for \
+    https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh \
+    https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 
 # Completion Files
 zinit silent wait as:"completion" for \
@@ -70,11 +73,6 @@ zinit silent wait as:"completion" for \
 
 
 # ===== Other =====
-
-# fzf
-if type fzf > /dev/null 2>&1 ; then
-  export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
-fi
 
 # Pyenv
 if type pyenv > /dev/null 2>&1 ; then
