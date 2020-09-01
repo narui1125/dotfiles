@@ -47,7 +47,8 @@ zinit light sindresorhus/pure
 zinit silent wait light-mode from:gh-r as:"program" for \
     mv:"bat* -> bat" @sharkdp/bat \
     mv:"fd* -> fd" @sharkdp/fd \
-    mv:"exa* -> exa" ogham/exa
+    mv:"exa* -> exa" ogham/exa \
+    junegunn/fzf-bin
 
 # Completions
 zinit silent wait light-mode for \
@@ -56,6 +57,7 @@ zinit silent wait light-mode for \
     atpull:"zinit creinstall -q ." blockf zsh-users/zsh-completions \
     zdharma/history-search-multi-word
 
+# Completion Files
 zinit silent wait as:"completion" for \
     https://raw.githubusercontent.com/docker/machine/master/contrib/completion/zsh/_docker-machine \
     https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/zsh/_docker-compose
