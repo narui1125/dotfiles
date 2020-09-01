@@ -39,29 +39,22 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-# Load the pure theme
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+# Thema
+zinit ice compile:"(pure|async).zsh" pick:"async.zsh" src:"pure.zsh"
 zinit light sindresorhus/pure
 
-# junegunn/fzf-bin
-zinit ice from"gh-r" as"program"
-zinit light junegunn/fzf-bin
+# Programs
+zinit silent wait light-mode from:gh-r as:program for \
+    mv:"bat* -> bat" sharkdp/bat \
+    mv:"exa* -> exa" ogham/exa \
+    junegunn/fzf-bin
 
-# sharkdp/bat, replacement for cat
-zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
-zinit light sharkdp/bat
-
-# ogham/exa, replacement for ls
-zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
-zinit light ogham/exa
-
-# 補完
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-# シンタックスハイライト
-zinit light zsh-users/zsh-syntax-highlighting
-# コマンド履歴検索
-zinit light zdharma/history-search-multi-word
+# Completions
+zinit silent wait light-mode for \
+    atinit:"zicompinit; zicdreplay" zsh-users/zsh-syntax-highlighting \
+    atload:"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    atpull:"zinit creinstall -q ." blockf zsh-users/zsh-completions \
+    zdharma/history-search-multi-word
 
 
 # ===== Other =====
