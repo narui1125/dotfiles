@@ -18,6 +18,7 @@ fi
 
 # fzf
 if type fzf > /dev/null 2>&1 ; then
+  export FZF_DEFAULT_OPTS="--layout=reverse --border"
   export PATH="${PATH:+${PATH}:}/$(brew --prefix)/opt/fzf/bin"
   source "$(brew --prefix)/opt/fzf/shell/completion.zsh"
   source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"

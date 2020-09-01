@@ -15,7 +15,8 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
-  'tmux'
+  'tmux' \
+  'fzf-tab'
 
 
 # ===== Prompt =====
