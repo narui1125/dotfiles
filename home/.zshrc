@@ -1,16 +1,13 @@
 # .zshrc
 
-# ===== General =====
+# ===== ZSH =====
 
-# OS毎の個別設定
-case ${OSTYPE} in
-  darwin*)
-    source "${HOME}/.zsh/.zshrc_darwin"
-    ;;
-  linux*)
-    source "${HOME}/.zsh/.zshrc_linux"
-    ;;
-esac
+# ヒストリコマンドを保存しない
+setopt hist_no_store 
+# 空白を除去する
+setopt hist_reduce_blanks
+# 重複を保存しない
+setopt hist_ignore_all_dups
 
 
 # ===== Zinit =====
@@ -63,6 +60,11 @@ zinit load zdharma/history-search-multi-word
 
 
 # ===== Other =====
+
+# fzf
+if type fzf > /dev/null 2>&1 ; then
+  export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+fi
 
 # Pyenv
 if type pyenv > /dev/null 2>&1 ; then
