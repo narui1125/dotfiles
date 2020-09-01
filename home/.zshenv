@@ -16,18 +16,18 @@ if [[ -z $TMUX ]]; then
   export CPLUS_INCLUDE_PATH="$HOME/.local/include:$CPLUS_INCLUDE_PATH"
   export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
   export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+
+  # homebrew & linuxbrew
+  if [[ ! -z $HOMEBREW_PREFIX ]]; then
+    export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
+    export CPLUS_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$CPLUS_INCLUDE_PATH"
+    export LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LIBRARY_PATH"
+  fi
+
+  # linuxbrew
+  if [[ -f $HOME/.linuxbrew ]]; then
+    eval $(~/.linuxbrew/bin/brew shellenv)
+  elif [[ -f $HOME/.linuxbrew ]]; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  fi
 fi
-
-# OS毎の個別設定
-  case ${OSTYPE} in
-    darwin*)
-      source "${HOME}/.zsh/.zshenv_darwin"
-      ;;
-    linux*)
-      source "${HOME}/.zsh/.zshenv_linux"
-      ;;
-  esac
-
-# alias
-alias aws="docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli"
-alias jupyter="docker run --rm -it -v $(pwd):/home/jovyan/work -p 8888:8888 -e NB_UID=$UID -e NB_GID=$GID --user root jupyter/tensorflow-notebook"
