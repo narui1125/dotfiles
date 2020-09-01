@@ -59,7 +59,7 @@ zinit silent wait light-mode for \
 
 # Completion Files
 zinit silent wait as:"completion" for \
-    https://raw.githubusercontent.com/docker/machine/master/contrib/completion/zsh/_docker-machine \
+    https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker \
     https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose
 
 
