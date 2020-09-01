@@ -2,12 +2,16 @@
 
 # ===== ZSH =====
 
-# ヒストリコマンドを保存しない
+# シェルの終了を待たずにファイルにコマンド履歴を保存
+setopt inc_append_history
+# historyコマンドをヒストリに保存しない
 setopt hist_no_store 
-# 空白を除去する
+# ヒストリに保存する時空白を除去する
 setopt hist_reduce_blanks
-# 重複を保存しない
+# 重複をヒストリに保存しない
 setopt hist_ignore_all_dups
+# ヒストリをシェル間で共有
+setopt share_history
 
 
 # ===== Zinit =====
@@ -52,11 +56,12 @@ zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
 zinit light ogham/exa
 
 # 補完
+zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 # シンタックスハイライト
-zinit light zdharma/fast-syntax-highlighting
+zinit light zsh-users/zsh-syntax-highlighting
 # コマンド履歴検索
-zinit load zdharma/history-search-multi-word
+zinit light zdharma/history-search-multi-word
 
 
 # ===== Other =====
