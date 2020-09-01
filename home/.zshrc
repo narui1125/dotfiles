@@ -49,9 +49,6 @@ zinit light-mode for \
 zinit ice compile:"(pure|async).zsh" pick:"async.zsh" src:"pure.zsh"
 zinit light sindresorhus/pure
 
-zinit ice atclone:"dircolors -b LS_COLORS > clrs.zsh" atpull:"%atclone" pick:"clrs.zsh" nocompile:'!' atload: 'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit light trapd00r/LS_COLORS
-
 # Programs
 zinit silent wait light-mode from:gh-r as:"program" for \
     mv:"bat* -> bat" @sharkdp/bat \
