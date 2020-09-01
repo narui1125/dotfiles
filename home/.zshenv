@@ -27,3 +27,6 @@ fi
       source "${HOME}/.zsh/.zshenv_linux"
       ;;
   esac
+
+# alias
+alias aws="docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli"
