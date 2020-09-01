@@ -39,7 +39,7 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-# Thema
+# Theme
 zinit ice compile:"(pure|async).zsh" pick:"async.zsh" src:"pure.zsh"
 zinit light sindresorhus/pure
 
