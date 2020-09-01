@@ -1,29 +1,6 @@
 # .zshrc
 
-# zsh
-if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
-   zcompile ~/.zshrc
-fi
-
-# History
-export HISTSIZE=1000
-export SAVEHIST=100000
-setopt hist_ignore_dups
-setopt EXTENDED_HISTORY
-
-# Prezto
-if [ -f "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-# fzf
-if type fzf > /dev/null 2>&1 ; then
-  export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git/*'"
-  export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
-  export PATH="${PATH:+${PATH}:}/$(brew --prefix)/opt/fzf/bin"
-  source "$(brew --prefix)/opt/fzf/shell/completion.zsh"
-  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
-fi
+# ===== General =====
 
 # OS毎の個別設定
 case ${OSTYPE} in
@@ -34,6 +11,58 @@ case ${OSTYPE} in
     source "${HOME}/.zsh/.zshrc_linux"
     ;;
 esac
+
+
+# ===== Zinit =====
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
+### End of Zinit's installer chunk
+
+# Load the pure theme
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
+
+# junegunn/fzf-bin
+zinit ice from"gh-r" as"program"
+zinit light junegunn/fzf-bin
+
+# sharkdp/bat, replacement for cat
+zinit ice as"command" from"gh-r" mv"bat* -> bat" pick"bat/bat"
+zinit light sharkdp/bat
+
+# ogham/exa, replacement for ls
+zinit ice wait"2" lucid from"gh-r" as"program" mv"exa* -> exa"
+zinit light ogham/exa
+
+# 補完
+zinit light zsh-users/zsh-autosuggestions
+# シンタックスハイライト
+zinit light zdharma/fast-syntax-highlighting
+# コマンド履歴検索
+zinit load zdharma/history-search-multi-word
+
+
+# ===== Other =====
 
 # Pyenv
 if type pyenv > /dev/null 2>&1 ; then
