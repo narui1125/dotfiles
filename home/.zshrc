@@ -74,11 +74,11 @@ zinit silent wait as:"completion" for \
     https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker \
     https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose
 
- # TMUX auto start
- zstyle ":prezto:module:tmux:session" name "default"
- zstyle ":prezto:module:tmux:auto-start" remote "yes"
+# TMUX auto start
+zstyle ":prezto:module:tmux:session" name "default"
+zstyle ":prezto:module:tmux:auto-start" remote "yes"
 
- zinit snippet PZT::modules/tmux/init.zsh
+zinit snippet PZT::modules/tmux/init.zsh
 
 
 # ===== Other =====
