@@ -1,10 +1,5 @@
 # .zshrc
 
-# ===== General =====
-
-export TERM=vt100
-
-
 # ===== alias =====
 
 alias aws="docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli"
@@ -79,7 +74,7 @@ zinit silent wait as:"completion" for \
  # TMUX auto start
  zstyle ":prezto:module:tmux:session" name "default"
  zstyle ":prezto:module:tmux:auto-start" remote "yes"
- 
+
  zinit snippet PZT::modules/tmux/init.zsh
 
 
