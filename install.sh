@@ -86,12 +86,18 @@ initialize_darwin(){
 	# Homebrew
 	source "${BIN_DIR}/homebrew.sh" && install_homebrew && brew update 
 	brew bundle --file="${ETC_DIR}/Brewfile"
+
+	# fix for zsh compinit
+	chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 }
 
 initialize_linux(){
 	# Linuxbrew
 	source "${BIN_DIR}/linuxbrew.sh" && install_linuxbrew && brew update
 	brew bundle --file="${ETC_DIR}/Brewfile"
+
+	# fix for zsh compinit
+	chmod g-w $HOME/.linuxbrew/share/zsh $HOME/.linuxbrew/share/zsh/site-functions
 }
 
 initialize_manual(){
