@@ -8,6 +8,9 @@ alias jupyter="docker run --rm -it -v $(pwd):/home/jovyan/work -p 8888:8888 -e N
 
 # ===== ZSH =====
 
+# 保存するヒストリ数
+HISTSIZE=1024
+SAVEHIST=1024
 # シェルの終了を待たずにファイルにコマンド履歴を保存
 setopt inc_append_history
 # historyコマンドをヒストリに保存しない
