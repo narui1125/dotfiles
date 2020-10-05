@@ -1,3 +1,7 @@
+
+" NERDTree
+autocmd vimenter * NERDTree
+
 " color
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
