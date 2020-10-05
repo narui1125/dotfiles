@@ -1,15 +1,15 @@
-[submodule "home/.vim/pack/plugins/start/nerdtree"]
-	path = home/.vim/pack/plugins/start/nerdtree
-	url = https://github.com/preservim/nerdtree.git
-[submodule "home/.vim/pack/plugins/start/vim-gitgutter"]
-	path = home/.vim/pack/plugins/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "home/.vim/pack/plugins/start/fugitive"]
-	path = home/.vim/pack/plugins/start/fugitive
-	url = https://tpope.io/vim/fugitive.git
 [submodule "home/.vim/pack/interface/start/vim-airline"]
 	path = home/.vim/pack/interface/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
 [submodule "home/.vim/pack/interface/start/vim-airline-themes"]
 	path = home/.vim/pack/interface/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "home/.vim/pack/integrations/start/nerdtree"]
+	path = home/.vim/pack/integrations/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "home/.vim/pack/interface/start/vim-gitgutter"]
+	path = home/.vim/pack/interface/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "home/.vim/pack/completion/start/fugitive"]
+	path = home/.vim/pack/completion/start/fugitive
+	url = https://tpope.io/vim/fugitive.git
