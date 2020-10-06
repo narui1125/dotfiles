@@ -124,6 +124,12 @@ initialize(){
 				printf "cancelled.";;
 		esac
 	fi
+
+	# NVM
+	nvm install --lts
+
+	# textlint
+	npm install textlint --global
 }
 
 # main
