@@ -1,0 +1,11 @@
+name: Test
+
+jobs:
+  ubuntu:
+    runs-on: Ubuntu LTS
+    container: ubuntu:latest
+    steps:
+      - name: Install requirements
+        run: apt-get update && apt-get install -y git
+      - name: Install dotfiles
+        run:  bash -c "$(curl -L raw.githubusercontent.com/narui1125/dotfiles/master/install.sh)"
