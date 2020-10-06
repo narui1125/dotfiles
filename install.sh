@@ -129,7 +129,11 @@ initialize(){
 	nvm install --lts
 
 	# textlint
-	npm install textlint --global
+	npm install --global textlint
+	npm install --global \
+		textlint-rule-preset-ja-technical-writing \
+		textlint-rule-preset-jtf-style \
+		textlint-rule-preset-ja-spacing
 }
 
 # main
