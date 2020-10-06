@@ -92,8 +92,8 @@ initialize_darwin(){
 }
 
 initialize_linux(){
-	# Linuxbrew
-	source "${BIN_DIR}/linuxbrew.sh" && install_linuxbrew && brew update
+	# Homebrew
+	source "${BIN_DIR}/homebrew.sh" && install_homebrew && brew update 
 	brew bundle --file="${ETC_DIR}/Brewfile"
 
 	# fix for zsh compinit

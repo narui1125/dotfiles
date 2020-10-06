@@ -1,6 +1,5 @@
 #!/bin/bash
 
-homebrew_url="https://raw.githubusercontent.com/Homebrew/install/master/install"
 
 # インストール
 install_homebrew(){
@@ -9,7 +8,7 @@ install_homebrew(){
   else
     printf "\e[1;34mInstall homebrew\e[0m\n"
 
-    /usr/bin/ruby -e "$(curl -fsSL ${homebrew_url})"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
 }
 
