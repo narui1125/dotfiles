@@ -84,8 +84,10 @@ deploy(){
 # アプリケーションのインストール
 initialize_darwin(){
 	# Homebrew
-	source "${BIN_DIR}/homebrew.sh" && install_homebrew && brew update 
-	brew bundle --file="${ETC_DIR}/Brewfile"
+	source "${BIN_DIR}/homebrew.sh" && install_homebrew
+	
+	eval $(/usr/local/bin/brew shellenv)
+	brew update && brew bundle --file="${ETC_DIR}/Brewfile"
 
 	# fix for zsh compinit
 	chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
@@ -93,8 +95,10 @@ initialize_darwin(){
 
 initialize_linux(){
 	# Homebrew
-	source "${BIN_DIR}/homebrew.sh" && install_homebrew && brew update 
-	brew bundle --file="${ETC_DIR}/Brewfile"
+	source "${BIN_DIR}/homebrew.sh" && install_homebrew
+	
+	eval $($HOME/.linuxbrew/bin/brew shellenv)
+	brew update && brew bundle --file="${ETC_DIR}/Brewfile"
 
 	# fix for zsh compinit
 	chmod g-w $HOME/.linuxbrew/share/zsh $HOME/.linuxbrew/share/zsh/site-functions
