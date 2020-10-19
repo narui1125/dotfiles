@@ -91,6 +91,9 @@ initialize_darwin(){
 
 	# fix for zsh compinit
 	chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
+
+	# Crontab
+	crontab ${ETC_DIR}/darwin.crontab
 }
 
 initialize_linux(){

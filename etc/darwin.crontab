@@ -1,0 +1,2 @@
+# HomeBrew Update
+0 12 * * * /usr/local/bin/brew update && /usr/local/bin/brew upgrade
