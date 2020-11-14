@@ -120,6 +120,7 @@ initialize(){
 
 	# textlint
 	npm install --global textlint
+	npm install --global textlint-plugin-latex
 	npm install --global \
 		textlint-rule-preset-ja-technical-writing \
 		textlint-rule-preset-jtf-style \
