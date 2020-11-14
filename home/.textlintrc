@@ -1,8 +1,8 @@
 {
   "filters": {},
   "rules": {
-    "textlint-rule-preset-ja-technical-writing": true,
-    "textlint-rule-preset-jtf-style": true,
-    "textlint-rule-preset-ja-spacing": true
+    "preset-ja-technical-writing": true,
+    "preset-jtf-style": true,
+    "preset-ja-spacing": true
   }
 }
