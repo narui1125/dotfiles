@@ -7,6 +7,11 @@ alias gcloud="docker run --rm -it -v ~/.config/gcloud:/root/.config/gcloud -w $(
 alias gsutil="docker run --rm -it -v ~/.config/gcloud:/root/.config/gcloud -w $(pwd):/gcloud -w /gcloud google/cloud-sdk:slim gsutil"
 alias jupyter="docker run --rm -it -v $(pwd):/home/jovyan/work -p 8888:8888 -e NB_UID=$UID -e NB_GID=$GID --user root jupyter/tensorflow-notebook"
 
+# Trash-cli
+if type trash-put > /dev/null 2>&1 ; then
+    alias rm=trash-put
+fi
+
 # ===== secrets =====
 
 if [[ -f $HOME/.secrets ]]; then
@@ -88,11 +93,3 @@ zstyle ":prezto:module:tmux:session" name "default"
 zstyle ":prezto:module:tmux:auto-start" remote "yes"
 
 zinit snippet PZT::modules/tmux/init.zsh
-
-
-# ===== Other =====
-
-# Trash-cli
-if type trash-put > /dev/null 2>&1 ; then
-    alias rm=trash-put
-fi
