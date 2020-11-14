@@ -8,6 +8,7 @@ alias gsutil="docker run --rm -it -v ~/.config/gcloud:/root/.config/gcloud -w $(
 alias jupyter="docker run --rm -it -v $(pwd):/home/jovyan/work -p 8888:8888 -e NB_UID=$UID -e NB_GID=$GID --user root jupyter/tensorflow-notebook"
 
 # ===== secrets =====
+
 if [[ -f $HOME/.secrets ]]; then
     source $HOME/.secrets
 fi
@@ -90,18 +91,6 @@ zinit snippet PZT::modules/tmux/init.zsh
 
 
 # ===== Other =====
-
-# Pyenv
-if type pyenv > /dev/null 2>&1 ; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-fi
-
-# Krypton
-if type kr > /dev/null 2>&1 ; then
-  export GPG_TTY=$(tty)
-fi
 
 # Trash-cli
 if type trash-put > /dev/null 2>&1 ; then

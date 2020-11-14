@@ -132,8 +132,8 @@ initialize(){
 		esac
 	fi
 
-	# NVM
-	nvm install --lts
+	# PIP
+	pip3 install -r ${ETC_DIR}/requirements.txt
 
 	# textlint
 	npm install --global textlint
