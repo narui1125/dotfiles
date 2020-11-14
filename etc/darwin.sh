@@ -15,6 +15,24 @@ defaults write com.apple.controlstrip MiniCustomized -array "com.apple.system.mi
 # Dockを左に表示
 defaults write com.apple.dock orientation -string "left"
 
+# ネットワークディスクで.DS_Storeファイルを作成しない
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+
+# スクリーンショットで影を表示しない
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# ===== Keyboard =====
+
+# ライブ変換をオフ
+defaults write com.apple.inputmethod.Kotoeri JIMPrefLiveConversionKey -int 0
+
+# タイプミスを修正しない
+defaults write com.apple.inputmethod.Kotoeri JIMPrefAutocorrectionKey -int 0
+
+# ドルキーでバックスラッシュを入力
+defaults write com.apple.inputmethod.Kotoeri JIMPrefCharacterForYenKey -int 1
+
+
 # ===== Finder =====
 
 # 全ての拡張子のファイルを表示する
@@ -32,6 +50,7 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # タグを表示しない
 defaults write com.apple.finder ShowRecentTags -bool false
+
 
 # ===== Safari =====
 
