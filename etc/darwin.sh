@@ -15,8 +15,9 @@ defaults write com.apple.controlstrip MiniCustomized -array "com.apple.system.mi
 # Dockを左に表示
 defaults write com.apple.dock orientation -string "left"
 
-# ネットワークディスクで.DS_Storeファイルを作成しない
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+# ネットワークディスクとUSBディスクで.DS_Storeファイルを作成しない
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # スクリーンショットで影を表示しない
 defaults write com.apple.screencapture disable-shadow -bool true
