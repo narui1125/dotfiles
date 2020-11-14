@@ -75,11 +75,15 @@ initialize_darwin(){
 	# fix for zsh compinit
 	chmod g-w /usr/local/share/zsh /usr/local/share/zsh/site-functions
 
-	# Crontab
+	# crontab
 	crontab ${ETC_DIR}/darwin.crontab
 
-	# Config
+	# config
 	source "${BIN_DIR}/darwin.sh"
+
+	# change shell
+	echo \\n# HomeBrew\\n$(which zsh) >> /etc/shells
+	sudo chsh -s $(which zsh)
 }
 
 initialize_linux(){
