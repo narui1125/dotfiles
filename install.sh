@@ -1,7 +1,6 @@
 #!/bin/bash
 
-DOTFILES_REPOSITORY="https://github.com/narui1125/dotfiles.git"
-DOTFILES_ARCHIVE="https://github.com/narui1125/dotfiles/archive/master.tar.gz"
+DOTFILES_REPOSITORY="git@github.com:narui1125/dotfiles.git"
 DOTFILES_DIR="${HOME}/.dotfiles"
 
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
@@ -26,24 +25,8 @@ download(){
 	if type "git" > /dev/null 2>&1 ; then
 		printf "download with git"
 		git clone --recursive "${DOTFILES_REPOSITORY}" "${DOTFILES_DIR}"
-	elif type "curl" > /dev/null 2>&1 ; then
-		printf "download with curl"
-
-		if [ ! -e ${DOTFILES_DIR} ]; then
-			mkdir -p ${DOTFILES_DIR}
-		fi
-
-		curl -L "${DOTFILES_ARCHIVE}" | tar xvz --strip=1 -C "${DOTFILES_DIR}"
-	elif type "wget" > /dev/null 2>&1 ; then
-		printf "download with wget"
-		
-		if [ ! -e ${DOTFILES_DIR} ]; then
-			mkdir -p ${DOTFILES_DIR}
-		fi
-
-		wget -O - "${DOTFILES_ARCHIVE}" | tar xvz --strip=1 -C "${DOTFILES_DIR}"
 	else
-		printf "git or curl or wget not found"
+		printf "git not found"
 		exit 1
 	fi
 }
