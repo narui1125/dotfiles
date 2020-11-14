@@ -96,7 +96,6 @@ initialize_linux(){
 initialize(){
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
-	# パッケージマネージャ対応ソフトのインストール
 	if [ "$(uname)" == "Darwin" ]; then
 		printf "\e[1;34m=== Darwin ===\e[0m \n"
 		initialize_darwin
@@ -112,12 +111,7 @@ initialize(){
 	pip3 install -r ${ETC_DIR}/requirements.txt
 
 	# textlint
-	npm install --global textlint
-	npm install --global textlint-plugin-latex2e
-	npm install --global \
-		textlint-rule-preset-ja-technical-writing \
-		textlint-rule-preset-jtf-style \
-		textlint-rule-preset-ja-spacing
+	source "${BIN_DIR}/textlint.sh" && install_textlint
 }
 
 # main
