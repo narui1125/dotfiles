@@ -14,7 +14,7 @@ download(){
 	printf "\e[1;34m=== Download dotfiles ===\e[0m \n"
 	
 	if [ -d "${DOTFILES_DIR}" ]; then
-        printf "${DOTFILES_DIR} already exists"
+        printf "${DOTFILES_DIR} already exists \n"
         return
     fi
 
@@ -93,11 +93,6 @@ initialize_linux(){
 	chmod g-w $HOME/.linuxbrew/share/zsh $HOME/.linuxbrew/share/zsh/site-functions
 }
 
-initialize_manual(){
-	# Manual install
-	source "${BIN_DIR}/tmux.sh" && install_tmux
-}
-
 initialize(){
 	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
@@ -109,13 +104,8 @@ initialize(){
 		printf "\e[1;34m=== Linux ===\e[0m \n"
 		initialize_linux
 	else
-		printf "Manual install? [Y/n]" && read answer
-		case $answer in
-			[yY])
-				initialize_manual;;
-			*)
-				printf "cancelled.";;
-		esac
+		printf "not Darwin or Linux\n"
+		exit 1
 	fi
 
 	# PIP
