@@ -77,6 +77,9 @@ initialize_darwin(){
 
 	# Crontab
 	crontab ${ETC_DIR}/darwin.crontab
+
+	# Config
+	source "${BIN_DIR}/darwin.sh"
 }
 
 initialize_linux(){
