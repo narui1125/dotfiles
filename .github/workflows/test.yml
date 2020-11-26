@@ -1,0 +1,17 @@
+name: Test
+
+on: [workflow_dispatch]
+
+jobs:
+  ubuntu:
+    runs-on: Ubuntu LTS
+    container: ubuntu:latest
+    steps:
+      - name: Install requirements
+        run: apt-get update && apt-get install -y git curl sudo
+      - name: Create Test user
+        run: useradd -m ubuntu
+      - name: Change Test user
+        run: su ubuntu
+      - name: Install dotfiles
+        run:  bash -c "$(curl -L raw.githubusercontent.com/narui1125/dotfiles/master/install.sh)"

@@ -1,10 +1,25 @@
 # .zshrc
 
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+
 # ===== alias =====
 
 alias aws="docker run --rm -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli"
+alias gcloud="docker run --rm -v ~/.config/gcloud:/root/.config/gcloud -w $(pwd):/gcloud -w /gcloud google/cloud-sdk:slim gcloud"
+alias gsutil="docker run --rm -v ~/.config/gcloud:/root/.config/gcloud -w $(pwd):/gcloud -w /gcloud google/cloud-sdk:slim gsutil"
 alias jupyter="docker run --rm -v $(pwd):/home/jovyan/work -p 8888:8888 -e NB_UID=$UID -e NB_GID=$GID --user root jupyter/tensorflow-notebook"
 
+# Trash-cli
+if type trash-put > /dev/null 2>&1 ; then
+    alias rm=trash-put
+fi
+
+# ===== secrets =====
+
+if [[ -f $HOME/.secrets ]]; then
+    source $HOME/.secrets
+fi
 
 # ===== ZSH =====
 
@@ -81,23 +96,3 @@ zstyle ":prezto:module:tmux:session" name "default"
 zstyle ":prezto:module:tmux:auto-start" remote "yes"
 
 zinit snippet PZT::modules/tmux/init.zsh
-
-
-# ===== Other =====
-
-# Pyenv
-if type pyenv > /dev/null 2>&1 ; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-fi
-
-# Krypton
-if type kr > /dev/null 2>&1 ; then
-  export GPG_TTY=$(tty)
-fi
-
-# Trash-cli
-if type trash-put > /dev/null 2>&1 ; then
-    alias rm=trash-put
-fi

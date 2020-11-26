@@ -1,0 +1,9 @@
+{
+  "plugins": ["latex2e"],
+  "filters": {},
+  "rules": {
+    "preset-ja-technical-writing": true,
+    "preset-jtf-style": true,
+    "preset-ja-spacing": true
+  }
+}
