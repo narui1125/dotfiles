@@ -7,13 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install requirements
-        run: apt-get update && apt-get install -y git curl
+        run: sudo apt-get update && apt-get install -y git curl
       - name: Install dotfiles
         run:  bash -c "$(curl -L raw.githubusercontent.com/narui1125/dotfiles/master/install.sh)"
   macos:
     runs-on: macos-latest
     steps:
-      - name: Install requirements
-        run: xcode-select --install
       - name: Install dotfiles
         run:  bash -c "$(curl -L raw.githubusercontent.com/narui1125/dotfiles/master/install.sh)"
