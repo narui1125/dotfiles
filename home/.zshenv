@@ -27,3 +27,7 @@ if [[ -z $TMUX ]]; then
     export LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LIBRARY_PATH"
   fi
 fi
+
+# Docker
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1

@@ -1,8 +1,5 @@
 # .zshrc
 
-export DOCKER_BUILDKIT=1
-export COMPOSE_DOCKER_CLI_BUILD=1
-
 # ===== alias =====
 
 alias aws="docker run --rm -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli"
