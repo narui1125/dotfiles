@@ -84,6 +84,9 @@ initialize_darwin(){
 	# change shell
 	echo \\n# HomeBrew\\n$(which zsh) >> /etc/shells
 	sudo chsh -s $(which zsh)
+
+	# OpenJDK-8
+	sudo ln -sfn /usr/local/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk
 }
 
 initialize_linux(){

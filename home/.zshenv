@@ -20,6 +20,9 @@ if [[ -z $TMUX ]]; then
   export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
   export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
+  # MySQL
+  export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
   # homebrew & linuxbrew
   if [[ ! -z $HOMEBREW_PREFIX ]]; then
     export C_INCLUDE_PATH="$HOMEBREW_PREFIX/include:$C_INCLUDE_PATH"
