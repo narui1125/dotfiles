@@ -5,7 +5,6 @@
 alias aws="docker run --rm -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli"
 alias gcloud="docker run --rm -v ~/.config/gcloud:/root/.config/gcloud -w $(pwd):/gcloud -w /gcloud google/cloud-sdk:slim gcloud"
 alias gsutil="docker run --rm -v ~/.config/gcloud:/root/.config/gcloud -w $(pwd):/gcloud -w /gcloud google/cloud-sdk:slim gsutil"
-alias jupyter="docker run --rm -v $(pwd):/home/jovyan/work -p 8888:8888 -e NB_UID=$UID -e NB_GID=$GID --user root jupyter/tensorflow-notebook"
 
 # Trash-cli
 if type trash-put > /dev/null 2>&1 ; then
