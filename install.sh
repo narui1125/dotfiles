@@ -14,8 +14,8 @@ download(){
 	printf "\e[1;34m=== Download dotfiles ===\e[0m \n"
 	
 	if [ -d "${DOTFILES_DIR}" ]; then
-        printf "${DOTFILES_DIR} already exists \n"
-        return
+		printf "${DOTFILES_DIR} already exists \n"
+		return
     fi
 
 	if [ "$(uname)" == "Darwin" ]; then
@@ -23,7 +23,6 @@ download(){
 	fi
 
 	if type "git" > /dev/null 2>&1 ; then
-		printf "download with git"
 		git clone --recursive "${DOTFILES_REPOSITORY}" "${DOTFILES_DIR}"
 	else
 		printf "git not found"
