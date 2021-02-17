@@ -115,9 +115,6 @@ initialize(){
 
 	# PIP
 	pip3 install --user -r ${ETC_DIR}/requirements.txt
-
-	# textlint
-	source "${BIN_DIR}/textlint.sh" && install_textlint
 }
 
 # main
