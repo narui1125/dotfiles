@@ -52,11 +52,18 @@ initialize(){
 	[ "$(uname)" == "Darwin" ] && source "${DOTFILES_DIR}/bin/darwin.sh"
 }
 
-deploy
 
-while getopts i OPT
+# Main
+while getopts c OPT
 do
   case $OPT in
-     i) initialize;;
+     c) MODE="compact";;
   esac
 done
+
+if [ "$MODE" == "compact" ]; then
+	deploy
+else
+	deploy
+	initialize
+fi
