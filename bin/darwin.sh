@@ -1,8 +1,6 @@
 # Configure for Darwin
 
-if [ "$(uname)" != "Darwin" ]; then
-    return
-fi
+[ "$(uname)" != "Darwin" ] && return
 
 # ===== General =====
 

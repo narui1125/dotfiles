@@ -7,9 +7,8 @@ SCRIPT_DIR=$(cd $(dirname $0);pwd)
 
 # ダウンロード
 download(){
-	if [ "$(uname)" == "Darwin" ]; then
-		xcode-select --install
-	fi
+	# Command Line Tools for Xcode
+	[ "$(uname)" == "Darwin" ] && xcode-select --install
 
 	if type "git" > /dev/null 2>&1 ; then
 		printf "Download dotfiles...\n"

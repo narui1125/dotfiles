@@ -10,8 +10,14 @@ install_homebrew(){
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" < /dev/null
 
-    if [ ! "$(uname)" == "Linux" ] 
-      eval $($HOME/.linuxbrew/bin/brew shellenv)
+    # Path
+    if [ -d "/opt/homebrew" ]; then
+      eval $(/opt/homebrew/bin/brew shellenv)
+    elif [[ -d "$HOME/.linuxbrew" ]]; then
+      eval $(~/.linuxbrew/bin/brew shellenv)
+    elif [[ -d /home/linuxbrew/.linuxbrew ]]; then
+      eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    fi
     
 	  brew update && brew bundle --file="${DOTFILES_DIR}/etc/Brewfile"
   fi
