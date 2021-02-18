@@ -52,10 +52,11 @@ initialize(){
 	[ "$(uname)" == "Darwin" ] && source "${DOTFILES_DIR}/bin/darwin.sh"
 }
 
-# main
-install(){
-	deploy
-	initialize
-}
+deploy
 
-install
+while getopts i OPT
+do
+  case $OPT in
+     i) initialize;;
+  esac
+done
