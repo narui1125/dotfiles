@@ -1,6 +1,6 @@
 # .zshenv
 
-# locale
+# Locale
 export LC_CTYPE="en_US.UTF-8"
 export LC_MESSAGES="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -8,25 +8,18 @@ export LC_ALL="en_US.UTF-8"
 export VISUAL=vim
 export EDITOR=vim
 
+# Docker
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+
 # PATH
 if [[ -z $TMUX ]]; then
-  export PATH="$HOME/.local/bin:$PATH"
-  export MANPATH="$HOME/.local/share/man:$MANPATH"
-  export INFOPATH="$HOME/.local/share/info:$INFOPATH"
-  export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-  export C_INCLUDE_PATH="$HOME/.local/include:$C_INCLUDE_PATH"
-  export CPLUS_INCLUDE_PATH="$HOME/.local/include:$CPLUS_INCLUDE_PATH"
-  export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
-  export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
-
-  # Homebrew
   if [ -d "/opt/homebrew" ]; then
     eval $(/opt/homebrew/bin/brew shellenv)
   elif [[ -d "$HOME/.linuxbrew" ]]; then
-      eval $(~/.linuxbrew/bin/brew shellenv)
+    eval $(~/.linuxbrew/bin/brew shellenv)
   elif [[ -d /home/linuxbrew/.linuxbrew ]]; then
-      eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   fi
 
   if [[ ! -z $HOMEBREW_PREFIX ]]; then
@@ -35,7 +28,3 @@ if [[ -z $TMUX ]]; then
     export LIBRARY_PATH="$HOMEBREW_PREFIX/lib:$LIBRARY_PATH"
   fi
 fi
-
-# Docker
-export DOCKER_BUILDKIT=1
-export COMPOSE_DOCKER_CLI_BUILD=1
