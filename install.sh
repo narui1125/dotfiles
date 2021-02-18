@@ -65,3 +65,5 @@ install(){
 	deploy
 	initialize
 }
+
+install
