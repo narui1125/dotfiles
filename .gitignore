@@ -1,2 +1,2 @@
-home/.gitconfig
-etc/Brewfile.lock.json
+home/.config/*
+!home/.config/git/ignore
