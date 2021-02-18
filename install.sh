@@ -45,14 +45,11 @@ initialize(){
 	# ダウンロード
 	[ ! -d "${DOTFILES_DIR}" ] && download
 
-	# OSチェック
-	if [ ! "$(uname)" == "Darwin" ] && [ ! "$(uname)" == "Linux" ]; then
-		printf "not Darwin or Linux\n"
-		exit 1
-	fi
-
 	# Homebrew
 	source "${DOTFILES_DIR}/bin/homebrew.sh" && install_homebrew
+
+	# macOS config
+	[ "$(uname)" == "Darwin" ] && source "${DOTFILES_DIR}/bin/darwin.sh"
 }
 
 # main
