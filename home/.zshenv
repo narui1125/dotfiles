@@ -20,11 +20,13 @@ if [[ -z $TMUX ]]; then
   export LIBRARY_PATH="$HOME/.local/lib:$LIBRARY_PATH"
   export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
 
-  # homebrew
-  if [ -d "$HOME/.linuxbrew" ]; then
-    eval $($HOME/.linuxbrew/bin/brew shellenv)
-  elif [ -d "/opt/homebrew" ]; then
+  # Homebrew
+  if [ -d "/opt/homebrew" ]; then
     eval $(/opt/homebrew/bin/brew shellenv)
+  elif [[ -d "$HOME/.linuxbrew" ]]; then
+      eval $(~/.linuxbrew/bin/brew shellenv)
+  elif [[ -d /home/linuxbrew/.linuxbrew ]]; then
+      eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   fi
 
   if [[ ! -z $HOMEBREW_PREFIX ]]; then

@@ -1,8 +1,0 @@
-# .zprofile
-
-# linuxbrew
-if [[ -d $HOME/.linuxbrew ]]; then
-    eval $(~/.linuxbrew/bin/brew shellenv)
-elif [[ -d /home/linuxbrew/.linuxbrew ]]; then
-    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-fi
