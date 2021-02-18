@@ -54,10 +54,6 @@ initialize(){
 
 	# Homebrew
 	source "${DOTFILES_DIR}/bin/homebrew.sh" && install_homebrew
-	
-	# Homebrew Applications
-	eval $($HOME/.linuxbrew/bin/brew shellenv)
-	brew update && brew bundle --file="${DOTFILES_DIR}/etc/Brewfile"
 }
 
 # main
