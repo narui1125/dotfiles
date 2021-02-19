@@ -65,25 +65,14 @@ zinit light-mode for \
 zinit ice compile:"(pure|async).zsh" pick:"async.zsh" src:"pure.zsh"
 zinit light sindresorhus/pure
 
-# Programs
-zinit silent wait light-mode from:gh-r as:"program" for \
-    mv:"bat* -> bat" @sharkdp/bat \
-    mv:"fd* -> fd" @sharkdp/fd \
-    mv:"exa* -> exa" ogham/exa \
-    junegunn/fzf-bin
-
-# Completions
+# Plugins
 zinit silent wait light-mode for \
-    atinit:"zicompinit; zicdreplay" zsh-users/zsh-syntax-highlighting \
-    atload:"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-    atpull:"zinit creinstall -q ." blockf zsh-users/zsh-completions
-
-zinit silent for \
-    https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh \
-    https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
+    zsh-users/zsh-syntax-highlighting \
+    zsh-users/zsh-autosuggestions \
+    zsh-users/zsh-completions
 
 # Completion Files
-zinit silent wait as:"completion" for \
+zinit silent wait as"completion" for \
     https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker \
     https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose
 
