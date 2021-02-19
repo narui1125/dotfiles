@@ -67,8 +67,8 @@ zinit light sindresorhus/pure
 
 # Programs
 zinit silent wait light-mode from:gh-r as"program" for \
-    mv:"bat* -> bat" @sharkdp/bat \
-    mv:"fd* -> fd" @sharkdp/fd \
+    mv:"bat* -> bat" pick"bat/bat" @sharkdp/bat \
+    mv:"fd* -> fd" pick"fd/fd" @sharkdp/fd \
     mv:"exa* -> exa" ogham/exa \
     junegunn/fzf-bin
 
