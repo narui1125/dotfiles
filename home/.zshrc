@@ -65,16 +65,28 @@ zinit light-mode for \
 zinit ice compile:"(pure|async).zsh" pick:"async.zsh" src:"pure.zsh"
 zinit light sindresorhus/pure
 
+# Programs
+zinit silent wait light-mode from:gh-r as"program" for \
+    mv:"bat* -> bat" @sharkdp/bat \
+    mv:"fd* -> fd" @sharkdp/fd \
+    mv:"exa* -> exa" ogham/exa \
+    junegunn/fzf-bin
+
 # Plugins
 zinit silent wait light-mode for \
     zsh-users/zsh-syntax-highlighting \
     zsh-users/zsh-autosuggestions \
     zsh-users/zsh-completions
 
-# Completion Files
+# KeyBindings
+zinit silent for \
+    https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
+
+# Completions
 zinit silent wait as"completion" for \
     https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker \
-    https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose
+    https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose \
+    https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
 
 # TMUX auto start
 zstyle ":prezto:module:tmux:session" name "default"
