@@ -11,6 +11,16 @@ if type trash-put > /dev/null 2>&1 ; then
     alias rm=trash-put
 fi
 
+# exa
+if type exa > /dev/null 2>&1 ; then
+    alias ls=exa
+fi
+
+# cat
+if type bat > /dev/null 2>&1 ; then
+    alias cat=bat
+fi
+
 # ===== secrets =====
 
 if [[ -f $HOME/.secrets ]]; then
