@@ -2,10 +2,13 @@
 
 [ "$(uname)" != "Darwin" ] && return
 
+printf "\e[1;34mConfigure for Darwin\e[0m \n"
+
 # ===== General =====
 
 # タップでクリック
-defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
 # TouchBarカスタマイズ
 defaults write com.apple.controlstrip MiniCustomized -array "com.apple.system.mission-control" "com.apple.system.launchpad" "com.apple.system.brightness" "com.apple.system.volume"

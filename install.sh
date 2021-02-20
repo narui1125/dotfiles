@@ -36,8 +36,6 @@ deploy(){
 			printf "%-25s -> %s\n" "${DOTFILES_DIR}/home/$f" "${HOME}/$f"
 		fi
 	done
-
-	source ${HOME}/.zshrc && source ${HOME}/.zshenv
 }
 
 # アプリケーションのインストール

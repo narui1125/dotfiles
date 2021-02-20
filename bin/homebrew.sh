@@ -8,7 +8,7 @@ install_homebrew(){
   else
     printf "\e[1;34mInstall homebrew\e[0m\n"
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" < /dev/null
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     # Path
     if [ -d "/opt/homebrew" ]; then
