@@ -1,4 +1,4 @@
 home/.config/*
-!home/.config/git/ignore
+!home/.config/git
 
 etc/Brewfile.lock.json
