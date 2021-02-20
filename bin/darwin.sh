@@ -9,6 +9,8 @@ printf "\e[1;34mConfigure for Darwin\e[0m \n"
 # タップでクリック
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # TouchBarカスタマイズ
 defaults write com.apple.controlstrip MiniCustomized -array "com.apple.system.mission-control" "com.apple.system.launchpad" "com.apple.system.brightness" "com.apple.system.volume"
