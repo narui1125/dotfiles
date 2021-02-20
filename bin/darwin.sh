@@ -71,4 +71,5 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # ===== iTerm2 =====
 
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "${DOTFILES_DIR}/etc/iterm2"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${DOTFILES_DIR}/etc/iterm2"
