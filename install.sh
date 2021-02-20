@@ -64,6 +64,6 @@ done
 if [ "$MODE" == "compact" ]; then
 	deploy
 else
-	deploy
 	initialize
+	deploy
 fi
