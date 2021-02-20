@@ -67,3 +67,8 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 # 開発者ツールを有効化
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+
+# ===== iTerm2 =====
+
+defaults write com. googlecode.iterm2.plist PrefsCustomFolder -string "${HOME}/.dotfiles/etc/iterm2"
