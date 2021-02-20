@@ -18,6 +18,9 @@ defaults write com.apple.controlstrip MiniCustomized -array "com.apple.system.mi
 # Dockを左に表示
 defaults write com.apple.dock orientation -string "left"
 
+# Dockに最近使ったアプリケーションを表示しない
+defaults write com.apple.dock show-recents -bool false
+
 # ネットワークディスクとUSBディスクで.DS_Storeファイルを作成しない
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
