@@ -18,7 +18,13 @@ install_homebrew(){
     elif [[ -d /home/linuxbrew/.linuxbrew ]]; then
       eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     fi
-    
-	  brew update && brew bundle --file="${DOTFILES_DIR}/etc/Brewfile"
+
+    # install brew applications
+    if type "brew" > /dev/null 2>&1 ; then
+      brew update && brew bundle --file="${DOTFILES_DIR}/etc/Brewfile"
+    else
+      printf "brew not found"
+    fi
+  
   fi
 }
