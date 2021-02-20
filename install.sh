@@ -7,6 +7,11 @@ SCRIPT_DIR=$(cd $(dirname $0);pwd)
 
 # ダウンロード
 download(){
+	# 確認
+	[ -d "${DOTFILES_DIR}" ] && return
+
+	printf "\e[1;34m=== Download dotfiles ===\e[0m \n"
+
 	# Command Line Tools for Xcode
 	[ "$(uname)" == "Darwin" ] && xcode-select --install
 
@@ -21,10 +26,10 @@ download(){
 
 # 設定ファイルの展開
 deploy(){
-	printf "\e[1;34m=== Create dotfile symbolic links ===\e[0m \n"
+	# 確認
+	[ ! -d "${DOTFILES_DIR}" ] && return
 
-	# ダウンロード
-	[ ! -d "${DOTFILES_DIR}" ] && download
+	printf "\e[1;34m=== Create dotfile symbolic links ===\e[0m \n"
 
 	cd "${DOTFILES_DIR}/home"
 	for f in .??*
@@ -40,10 +45,10 @@ deploy(){
 
 # アプリケーションのインストール
 initialize(){
-	printf "\e[1;34m=== Install Applications ===\e[0m \n"
+	# 確認
+	[ ! -d "${DOTFILES_DIR}" ] && return
 
-	# ダウンロード
-	[ ! -d "${DOTFILES_DIR}" ] && download
+	printf "\e[1;34m=== Install Applications ===\e[0m \n"
 
 	# Homebrew
 	source "${DOTFILES_DIR}/bin/homebrew.sh" && install_homebrew
@@ -62,8 +67,10 @@ do
 done
 
 if [ "$MODE" == "compact" ]; then
+	download
 	deploy
 else
+	download
 	initialize
 	deploy
 fi
