@@ -35,6 +35,7 @@ deploy(){
 	for f in .??*
 	do
 		[[ "$f" == ".dotfiles" ]] && continue
+		[[ "$f" == ".DS_Store" ]] && continue
 
 		ln -snf "${DOTFILES_DIR}/home/$f" "${HOME}/$f"
 		if [ $? -eq 0 ]; then
