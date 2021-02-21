@@ -42,6 +42,13 @@ deploy(){
 			printf "%-25s -> %s\n" "${DOTFILES_DIR}/home/$f" "${HOME}/$f"
 		fi
 	done
+
+	# Fix zsh compaudit
+	if [ -d "/usr/local/share/zsh" ] ; then
+		chmod 755 /usr/local/share/zsh/site-functions
+		chmod 755 /usr/local/share/zsh
+	fi
+
 }
 
 # アプリケーションのインストール
