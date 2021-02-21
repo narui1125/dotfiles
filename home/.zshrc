@@ -85,8 +85,8 @@ zinit silent wait light-mode from:gh-r as"program" for \
 # Plugins
 zinit silent wait light-mode for \
     zsh-users/zsh-syntax-highlighting \
-    zsh-users/zsh-autosuggestions \
-    zsh-users/zsh-completions
+    atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    atinit"zpcompinit; zpcdreplay" zsh-users/zsh-completions
 
 # KeyBindings
 zinit silent for \
